@@ -102,7 +102,7 @@
     }
     .hero-content {
       position: relative; z-index: 2;
-      padding: 0 6vw; max-width: 1100px;
+      padding: 0 6vw; width: 100%;
     }
     .hero-eyebrow {
       font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
@@ -112,7 +112,8 @@
     .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--green); }
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-size: clamp(0.75rem, 3.2vw, 4.5rem);
+      white-space: nowrap;
       font-weight: 700; color: #fff; line-height: 1.08;
       margin-bottom: 1.5rem;
     }
@@ -499,7 +500,7 @@
     <div class="hero-brand-mark"><img src="assets/logo-sitom.webp" alt="Sitom Edilizia"/><span>Sitom Edilizia Srl</span></div>
     <div class="hero-eyebrow">Roma &amp; Provincia · Dal 2013</div>
     <h1 class="hero-title">
-      Il cantiere fatto bene, con la firma <em>Sitom</em>.
+      Il cantiere fatto bene, da Sitom.
     </h1>
     <p class="hero-sub">
       Ristrutturazioni, impianti e finiture seguiti da artigiani veri.

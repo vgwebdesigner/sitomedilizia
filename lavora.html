@@ -88,6 +88,12 @@
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
     .btn-submit{width:100%;background:var(--green);color:#fff;border:none;padding:14px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:500;letter-spacing:0.06em;cursor:pointer;transition:background 0.2s}
     .btn-submit:hover{background:var(--green-dark)}
+    .privacy-check{display:flex;align-items:flex-start;gap:0.65rem;margin:1.5rem 0 1.25rem;cursor:pointer}
+    .privacy-check input[type="checkbox"]{appearance:none;-webkit-appearance:none;width:18px;height:18px;min-width:18px;border:1.5px solid var(--line);border-radius:4px;margin-top:2px;cursor:pointer;position:relative;transition:border-color .2s,background .2s}
+    .privacy-check input[type="checkbox"]:checked{background:var(--green);border-color:var(--green)}
+    .privacy-check input[type="checkbox"]:checked::after{content:'✓';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700}
+    .privacy-check span{font-size:0.78rem;color:var(--gray);line-height:1.55}
+    .privacy-check a{color:var(--green)}
     .form-success{display:none;background:#eaf5ee;color:var(--green-dark);padding:1rem;text-align:center;font-weight:500;font-size:0.9rem;margin-top:0.75rem}
 
     /* PROFILI */
