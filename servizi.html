@@ -29,6 +29,9 @@
   <style>
     :root{--green:#1a7a38;--green-light:#219a47;--green-dark:#125429;--black:#0f0f0f;--text:#2a2a2a;--gray:#6b6b6b;--line:#e4e4e0;--bg:#fafaf8;--white:#ffffff}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :focus-visible{outline:2px solid var(--green-light);outline-offset:3px}
+    .skip-link{position:absolute;left:1rem;top:-60px;background:var(--green);color:#fff;padding:.85rem 1.25rem;z-index:1000;text-decoration:none;font-size:.85rem;font-weight:700;transition:top .2s}
+    .skip-link:focus{top:1rem}
     html{scroll-behavior:smooth}
     body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
     nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 6vw;height:72px}
@@ -47,53 +50,69 @@
     section{padding:6rem 6vw}
     .section-tag{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);font-weight:500;margin-bottom:1rem}
     .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:700;line-height:1.1;color:var(--black);margin-bottom:1.25rem}
-    .btn{display:inline-block;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.06em;padding:13px 28px;transition:all 0.2s}
-    .btn-green{background:var(--green);color:#fff}
+    .btn{display:inline-block;text-decoration:none;font-size:0.85rem;font-weight:700;letter-spacing:0.06em;padding:14px 30px;transition:all 0.2s}.btn:hover{transform:translateY(-2px)}
+    .btn-green{background:var(--green);color:#fff;box-shadow:0 10px 30px rgba(26,122,56,.3)}
     .btn-green:hover{background:var(--green-dark)}
 
-    .page-hero{margin-top:72px;padding:5rem 6vw 4rem;background:var(--bg);border-bottom:1px solid var(--line)}
-    .page-hero .section-title{margin-bottom:1rem}
-    .page-hero p{font-size:1.05rem;color:var(--gray);line-height:1.85;max-width:600px}
+    .page-hero{margin-top:72px;padding:7rem 6vw 5rem;position:relative;overflow:hidden;background:var(--black)}
+    .page-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85}
+    .page-hero-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,15,15,.55) 0%,rgba(15,15,15,.8) 100%);z-index:1}
+    .page-hero-inner{position:relative;z-index:2;max-width:700px}
+    .page-hero .section-tag{color:var(--green-light)}
+    .page-hero .section-title{margin-bottom:1rem;color:#fff}
+    .page-hero p{font-size:1.05rem;color:rgba(255,255,255,0.8);line-height:1.85;max-width:600px}
 
     /* SERVIZI FULL */
     .servizi-list{background:var(--white)}
     .servizio-row{
       display:grid;grid-template-columns:1fr 1fr;
       border-bottom:1px solid var(--line);align-items:stretch;
+      transition:background .25s ease;
     }
+    .servizio-row:hover{background:var(--bg)}
     .servizio-row:nth-child(even){direction:rtl}
     .servizio-row:nth-child(even) > *{direction:ltr}
-    .servizio-info{padding:4rem 3rem 4rem 0}
-    .servizio-row:nth-child(even) .servizio-info{padding:4rem 0 4rem 3rem}
-    .serv-number{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:700;color:var(--line);line-height:1;margin-bottom:1.25rem}
-    .servizio-info h2{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--black);margin-bottom:1rem;line-height:1.2}
+    .servizio-info{padding:4.5rem 3rem 4.5rem 0}
+    .servizio-row:nth-child(even) .servizio-info{padding:4.5rem 0 4.5rem 3rem}
+    .serv-number{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:700;color:var(--line);line-height:1;margin-bottom:1.25rem;transition:color .25s ease}
+    .servizio-row:hover .serv-number{color:var(--green-light)}
+    .servizio-info h2{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--black);margin-bottom:1.5rem;line-height:1.2}
     .servizio-info p{font-size:0.9rem;color:var(--gray);line-height:1.85;margin-bottom:1rem}
     .serv-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.25rem}
     .serv-tag{font-size:0.72rem;letter-spacing:0.08em;border:1px solid var(--line);padding:5px 12px;color:var(--gray)}
-    .servizio-visual{background:var(--bg);display:flex;align-items:stretch;justify-content:center;min-height:100%;color:#bbb;font-size:0.8rem;text-align:center;line-height:2}
+    .serv-more{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.5rem;color:var(--green);font-size:0.85rem;font-weight:700;text-decoration:none}
+    .serv-more:hover{color:var(--green-dark)}
+    .servizio-visual{background:var(--bg);display:flex;align-items:stretch;justify-content:center;min-height:100%;color:#bbb;font-size:0.8rem;text-align:center;line-height:2;overflow:hidden}
+    .servizio-visual img{transition:transform .5s ease}
+    .servizio-row:hover .servizio-visual img{transform:scale(1.04)}
+
+    /* GARANZIE */
+    .garanzie{background:var(--green);padding:2.25rem 6vw;display:flex;align-items:center;justify-content:center;gap:2.25rem;flex-wrap:wrap;text-align:center}
+    .garanzie strong{color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700}
+    .garanzie-item{display:inline-flex;align-items:center;gap:.5rem;color:rgba(255,255,255,0.92);font-size:0.88rem;font-weight:500}
 
     /* ZONE */
-    .zone{background:var(--black);padding:5rem 6vw;text-align:center}
-    .zone .section-tag{color:rgba(255,255,255,0.4)}
-    .zone .section-title{color:#fff;margin:0 auto 1rem}
-    .zone p{color:rgba(255,255,255,0.55);font-size:0.9rem;max-width:520px;margin:0 auto 2.5rem;line-height:1.8}
+    .zone{background:var(--bg);padding:5rem 6vw;text-align:center}
+    .zone .section-tag{color:var(--green)}
+    .zone .section-title{color:var(--black);margin:0 auto 1rem}
+    .zone p{color:var(--gray);font-size:0.9rem;max-width:520px;margin:0 auto 2.5rem;line-height:1.8}
     .zone-tags{display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;max-width:600px;margin:0 auto}
-    .zone-tag{padding:8px 20px;font-size:0.82rem;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.15)}
+    .zone-tag{padding:8px 20px;font-size:0.82rem;color:var(--gray);border:1px solid var(--line);background:#fff}
     .zone-tag.main{background:var(--green);color:#fff;border-color:var(--green);font-weight:500}
 
     .cta-strip{background:var(--green);padding:4rem 6vw;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
     .cta-strip h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:#fff;font-weight:700}
     .cta-strip p{color:rgba(255,255,255,0.75);font-size:0.9rem;margin-top:0.4rem}
 
-    footer{background:#0f0f0f;color:rgba(255,255,255,0.5);padding:4rem 6vw 2.5rem}
+    footer{background:#0f0f0f;color:rgba(255,255,255,0.62);padding:4rem 6vw 2.5rem}
     .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.07)}
     .footer-logo{height:90px;width:auto;background:#fff;padding:8px;opacity:1;margin-bottom:1.25rem}
-    .footer-about p{font-size:0.85rem;line-height:1.8;max-width:280px}
-    .footer-slogan{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(255,255,255,0.25);font-size:0.95rem;margin-top:1rem}
-    .footer-col h5{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.25rem;font-weight:500}
+    .footer-about p{font-size:0.85rem;line-height:1.8;max-width:280px;color:rgba(255,255,255,0.65)}
+    .footer-slogan{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(255,255,255,0.4);font-size:0.95rem;margin-top:1rem}
+    .footer-col h5{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:1.25rem;font-weight:500}
     .footer-col ul{list-style:none}
     .footer-col ul li{margin-bottom:0.65rem}
-    .footer-col ul li a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
+    .footer-col ul li a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
     .footer-col ul li a:hover{color:var(--green-light)}
     .footer-bottom{padding-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;font-size:0.78rem}
 
@@ -111,6 +130,7 @@
   <link rel="stylesheet" href="assets/css/cookie-consent.css"/><link rel="stylesheet" href="assets/site-enhancements.css"/>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Vai al contenuto principale</a>
 
 <nav>
   <a class='nav-logo' href='index.html'><img src="assets/logo-sitom.webp" alt="Sitom Edilizia"/></a>
@@ -128,15 +148,20 @@
   <a href='servizi.html'>Servizi</a><a href='lavora.html'>Lavora con Noi</a><a href='contatti.html'>Contatti</a>
 </div>
 
-<div class="page-hero">
-  <p class="section-tag">Servizi</p>
-  <h1 class="section-title">Tutto ciò che serve<br/>alla tua casa.</h1>
-  <p>Dalla ristrutturazione completa alle finiture di dettaglio. Lavoriamo per privati e aziende, con la stessa cura artigianale in ogni cantiere.</p>
+<div class="page-hero" id="main-content">
+  <img class="page-hero-img" src="assets/lavoro-16.webp" alt="Bagno con doccia walk-in realizzato da Sitom Edilizia" fetchpriority="high"/>
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-inner">
+    <p class="section-tag">Servizi</p>
+    <h1 class="section-title">Tutto ciò che serve<br/>alla tua casa.</h1>
+    <p>Dalla ristrutturazione completa alle finiture di dettaglio. Lavoriamo per privati e aziende, con la stessa cura artigianale in ogni cantiere.</p>
+    <p style="margin-top:1rem">Dalla piccola ristrutturazione agli interventi più complessi, ti accompagniamo in ogni fase del progetto.</p>
+  </div>
 </div>
 
 <section class="servizi-list" style="padding:0">
   <div class="servizio-row">
-    <div class="servizio-info" style="padding:4rem 3rem 4rem 6vw">
+    <div class="servizio-info" style="padding:4.5rem 3rem 4.5rem 6vw">
       <div class="serv-number">01</div>
       <h2>Ristrutturazione Edilizia Completa</h2>
       <p>Una ristrutturazione completa non &egrave; solo una somma di lavori: &egrave; coordinamento, controllo delle priorit&agrave; e capacit&agrave; di tenere insieme murature, impianti, finiture, tempi e budget. Sitom Edilizia segue ogni fase con un approccio chiavi in mano: sopralluogo, valutazione tecnica, organizzazione delle lavorazioni, gestione degli artigiani e consegna finale dell'ambiente pronto da vivere.</p>
@@ -147,12 +172,13 @@
         <span class="serv-tag">Aziende</span>
         <span class="serv-tag">Sopralluogo gratuito</span>
       </div>
+      <a class="serv-more" href="contatti.html">Richiedi informazioni →</a>
     </div>
     <div class="servizio-visual"><img src="assets/lavoro-13.webp" alt="Soggiorno al termine di una ristrutturazione completa" loading="lazy" decoding="async"/></div>
   </div>
 
   <div class="servizio-row">
-    <div class="servizio-info" style="padding:4rem 6vw 4rem 3rem">
+    <div class="servizio-info" style="padding:4.5rem 6vw 4.5rem 3rem">
       <div class="serv-number">02</div>
       <h2>Impiantistica Idraulica</h2>
       <p>Realizziamo e rifacciamo impianti idraulici per bagni, cucine, lavanderie, colonne di scarico, adduzioni e collegamenti agli elementi sanitari. Ogni intervento viene valutato partendo dallo stato reale dell'immobile, perch&eacute; un impianto ben fatto deve funzionare nel tempo, essere accessibile dove serve e integrarsi correttamente con pavimenti, rivestimenti e arredi.</p>
@@ -163,73 +189,14 @@
         <span class="serv-tag">Riscaldamento</span>
         <span class="serv-tag">A norma di legge</span>
       </div>
+      <a class="serv-more" href="contatti.html">Richiedi informazioni →</a>
     </div>
     <div class="servizio-visual"><img src="assets/lavoro-06.webp" alt="Predisposizione degli impianti idraulici in bagno" loading="lazy" decoding="async"/></div>
   </div>
 
   <div class="servizio-row">
-    <div class="servizio-info" style="padding:4rem 3rem 4rem 6vw">
+    <div class="servizio-info" style="padding:4.5rem 3rem 4.5rem 6vw">
       <div class="serv-number">03</div>
-      <h2>Impiantistica Termica</h2>
-      <p>Gli impianti termici incidono sul comfort quotidiano, sui consumi e sul valore dell'immobile. Ci occupiamo di installazione, sostituzione e predisposizione di sistemi per riscaldamento, climatizzazione, caldaie, radiatori, split e soluzioni integrate nelle ristrutturazioni. L'obiettivo &egrave; scegliere una soluzione funzionale, proporzionata agli ambienti e compatibile con le esigenze del cliente.</p>
-      <p>Quando il lavoro rientra in una ristrutturazione pi&ugrave; ampia, coordiniamo la parte termica con opere murarie, impianti elettrici e finiture, cos&igrave; da evitare tagli inutili, passaggi disordinati o interventi correttivi a lavori finiti. Valutiamo posizionamenti, accessibilit&agrave; per manutenzione, resa degli ambienti e pulizia estetica dell'installazione. In questo modo l'impianto non &egrave; un elemento aggiunto, ma una parte integrata del progetto.</p>
-      <div class="serv-tags">
-        <span class="serv-tag">Caldaie</span>
-        <span class="serv-tag">Climatizzatori</span>
-        <span class="serv-tag">Riscaldamento a pavimento</span>
-      </div>
-    </div>
-    <div class="servizio-visual"><img src="assets/lavoro-08.webp" alt="Ambiente commerciale con impianto di climatizzazione integrato" loading="lazy" decoding="async"/></div>
-  </div>
-
-  <div class="servizio-row">
-    <div class="servizio-info" style="padding:4rem 6vw 4rem 3rem">
-      <div class="serv-number">04</div>
-      <h2>Impiantistica Elettrica</h2>
-      <p>Realizziamo impianti elettrici civili e per ambienti commerciali, sia in caso di rifacimento completo sia per adeguamenti, ampliamenti e nuove predisposizioni. Un impianto elettrico deve essere sicuro, ordinato e pensato sulle abitudini reali di chi user&agrave; gli spazi: punti luce, prese, comandi, citofonia, illuminazione, climatizzazione e predisposizioni future vanno studiati prima di chiudere pareti e finiture.</p>
-      <p>Il nostro metodo evita soluzioni improvvisate. Durante il cantiere coordiniamo tracce, passaggi, scatole, quadri e collegamenti con le altre lavorazioni, mantenendo pulizia e logica esecutiva. Prestiamo attenzione alla conformit&agrave; normativa, alla praticit&agrave; d'uso e all'estetica finale, soprattutto negli ambienti ristrutturati dove placche, luci e comandi diventano parte visibile del progetto.</p>
-      <div class="serv-tags">
-        <span class="serv-tag">Civile</span>
-        <span class="serv-tag">Industriale</span>
-        <span class="serv-tag">Messa a norma</span>
-      </div>
-    </div>
-    <div class="servizio-visual"><img src="assets/lavoro-07.webp" alt="Realizzazione degli impianti in un ambiente commerciale" loading="lazy" decoding="async"/></div>
-  </div>
-
-  <div class="servizio-row">
-    <div class="servizio-info" style="padding:4rem 3rem 4rem 6vw">
-      <div class="serv-number">05</div>
-      <h2>Opere in Cartongesso</h2>
-      <p>Il cartongesso permette di trasformare gli ambienti con soluzioni leggere, precise e pulite: pareti divisorie, controsoffitti, velette, nicchie, contropareti, ribassamenti tecnici e dettagli su misura. Lo usiamo quando serve migliorare distribuzione, illuminazione, isolamento, passaggio impianti o resa estetica, sempre valutando proporzioni, altezze e funzionalit&agrave; dello spazio.</p>
-      <p>Una buona opera in cartongesso non si riconosce solo dalla forma, ma dalla precisione delle giunzioni, dalla planarit&agrave;, dalla solidit&agrave; della struttura e dall'integrazione con impianti e finiture. Per questo coordiniamo misure, telai, lastre, rasature e tinteggiatura finale con attenzione artigianale. Il risultato &egrave; un intervento moderno e discreto, capace di valorizzare la casa senza appesantirla.</p>
-      <div class="serv-tags">
-        <span class="serv-tag">Controsoffitti</span>
-        <span class="serv-tag">Pareti divisorie</span>
-        <span class="serv-tag">Nicchie decorative</span>
-      </div>
-    </div>
-    <div class="servizio-visual"><img src="assets/lavoro-11.webp" alt="Realizzazione di pareti divisorie interne" loading="lazy" decoding="async"/></div>
-  </div>
-
-  <div class="servizio-row">
-    <div class="servizio-info" style="padding:4rem 6vw 4rem 3rem">
-      <div class="serv-number">06</div>
-      <h2>Tinteggiature</h2>
-      <p>La tinteggiatura &egrave; spesso l'ultima fase del cantiere, ma &egrave; anche quella che il cliente vede ogni giorno. Per questo la trattiamo come una finitura importante, non come un passaggio secondario. Prepariamo le superfici, correggiamo imperfezioni, valutiamo fondi, rasature, assorbimenti e tipo di pittura pi&ugrave; adatto agli ambienti interni o esterni.</p>
-      <p>Realizziamo pitture lisce, finiture decorative, riprese, facciate e interventi coordinati con ristrutturazioni complete. La scelta del colore viene gestita con equilibrio, rispettando luce, arredi e stile della casa. Una parete ben tinteggiata deve essere uniforme, pulita nei tagli, resistente e coerente con il resto del lavoro. Sono questi dettagli, spesso silenziosi, che fanno percepire un cantiere davvero professionale.</p>
-      <div class="serv-tags">
-        <span class="serv-tag">Interne</span>
-        <span class="serv-tag">Esterne</span>
-        <span class="serv-tag">Decorative</span>
-      </div>
-    </div>
-    <div class="servizio-visual"><img src="assets/lavoro-10.webp" alt="Rifacimento e finitura delle superfici esterne" loading="lazy" decoding="async"/></div>
-  </div>
-
-  <div class="servizio-row">
-    <div class="servizio-info" style="padding:4rem 3rem 4rem 6vw">
-      <div class="serv-number">07</div>
       <h2>Pavimentazioni</h2>
       <p>La posa di un pavimento richiede precisione, esperienza e cura dei dettagli. Lavoriamo con ceramica, gres porcellanato, parquet, materiali lapidei e rivestimenti coordinati, valutando supporto, quote, planarit&agrave;, fughe, tagli, pendenze e continuit&agrave; visiva tra gli ambienti. Prima di posare, controlliamo il fondo e organizziamo il disegno di posa per evitare soluzioni casuali.</p>
       <p>Un pavimento riuscito deve essere bello, stabile e coerente con l'uso quotidiano dello spazio. Nei bagni curiamo scarichi, piatti doccia, rivestimenti e raccordi; nelle case e nei locali commerciali prestiamo attenzione a passaggi, soglie, battiscopa e allineamenti. La differenza si vede nei tagli puliti, nelle fughe regolari e nella sensazione generale di ordine che resta quando il cantiere &egrave; finito.</p>
@@ -239,12 +206,77 @@
         <span class="serv-tag">Parquet</span>
         <span class="serv-tag">Pietra naturale</span>
       </div>
+      <a class="serv-more" href="contatti.html">Richiedi informazioni →</a>
     </div>
     <div class="servizio-visual"><img src="assets/lavoro-01.webp" alt="Posa coordinata di pavimenti e rivestimenti" loading="lazy" decoding="async"/></div>
   </div>
 
   <div class="servizio-row">
-    <div class="servizio-info" style="padding:4rem 6vw 4rem 3rem">
+    <div class="servizio-info" style="padding:4.5rem 6vw 4.5rem 3rem">
+      <div class="serv-number">04</div>
+      <h2>Opere in Cartongesso</h2>
+      <p>Il cartongesso permette di trasformare gli ambienti con soluzioni leggere, precise e pulite: pareti divisorie, controsoffitti, velette, nicchie, contropareti, ribassamenti tecnici e dettagli su misura. Lo usiamo quando serve migliorare distribuzione, illuminazione, isolamento, passaggio impianti o resa estetica, sempre valutando proporzioni, altezze e funzionalit&agrave; dello spazio.</p>
+      <p>Una buona opera in cartongesso non si riconosce solo dalla forma, ma dalla precisione delle giunzioni, dalla planarit&agrave;, dalla solidit&agrave; della struttura e dall'integrazione con impianti e finiture. Per questo coordiniamo misure, telai, lastre, rasature e tinteggiatura finale con attenzione artigianale. Il risultato &egrave; un intervento moderno e discreto, capace di valorizzare la casa senza appesantirla.</p>
+      <div class="serv-tags">
+        <span class="serv-tag">Controsoffitti</span>
+        <span class="serv-tag">Pareti divisorie</span>
+        <span class="serv-tag">Nicchie decorative</span>
+      </div>
+      <a class="serv-more" href="contatti.html">Richiedi informazioni →</a>
+    </div>
+    <div class="servizio-visual"><img src="assets/lavoro-11.webp" alt="Realizzazione di pareti divisorie interne" loading="lazy" decoding="async"/></div>
+  </div>
+
+  <div class="servizio-row">
+    <div class="servizio-info" style="padding:4.5rem 3rem 4.5rem 6vw">
+      <div class="serv-number">05</div>
+      <h2>Tinteggiature</h2>
+      <p>La tinteggiatura &egrave; spesso l'ultima fase del cantiere, ma &egrave; anche quella che il cliente vede ogni giorno. Per questo la trattiamo come una finitura importante, non come un passaggio secondario. Prepariamo le superfici, correggiamo imperfezioni, valutiamo fondi, rasature, assorbimenti e tipo di pittura pi&ugrave; adatto agli ambienti interni o esterni.</p>
+      <p>Realizziamo pitture lisce, finiture decorative, riprese, facciate e interventi coordinati con ristrutturazioni complete. La scelta del colore viene gestita con equilibrio, rispettando luce, arredi e stile della casa. Una parete ben tinteggiata deve essere uniforme, pulita nei tagli, resistente e coerente con il resto del lavoro. Sono questi dettagli, spesso silenziosi, che fanno percepire un cantiere davvero professionale.</p>
+      <div class="serv-tags">
+        <span class="serv-tag">Interne</span>
+        <span class="serv-tag">Esterne</span>
+        <span class="serv-tag">Decorative</span>
+      </div>
+      <a class="serv-more" href="contatti.html">Richiedi informazioni →</a>
+    </div>
+    <div class="servizio-visual"><img src="assets/lavoro-10.webp" alt="Rifacimento e finitura delle superfici esterne" loading="lazy" decoding="async"/></div>
+  </div>
+
+  <div class="servizio-row">
+    <div class="servizio-info" style="padding:4.5rem 6vw 4.5rem 3rem">
+      <div class="serv-number">06</div>
+      <h2>Impiantistica Elettrica</h2>
+      <p>Realizziamo impianti elettrici civili e per ambienti commerciali, sia in caso di rifacimento completo sia per adeguamenti, ampliamenti e nuove predisposizioni. Un impianto elettrico deve essere sicuro, ordinato e pensato sulle abitudini reali di chi user&agrave; gli spazi: punti luce, prese, comandi, citofonia, illuminazione, climatizzazione e predisposizioni future vanno studiati prima di chiudere pareti e finiture.</p>
+      <p>Il nostro metodo evita soluzioni improvvisate. Durante il cantiere coordiniamo tracce, passaggi, scatole, quadri e collegamenti con le altre lavorazioni, mantenendo pulizia e logica esecutiva. Prestiamo attenzione alla conformit&agrave; normativa, alla praticit&agrave; d'uso e all'estetica finale, soprattutto negli ambienti ristrutturati dove placche, luci e comandi diventano parte visibile del progetto.</p>
+      <div class="serv-tags">
+        <span class="serv-tag">Civile</span>
+        <span class="serv-tag">Industriale</span>
+        <span class="serv-tag">Messa a norma</span>
+      </div>
+      <a class="serv-more" href="contatti.html">Richiedi informazioni →</a>
+    </div>
+    <div class="servizio-visual"><img src="assets/lavoro-07.webp" alt="Realizzazione degli impianti in un ambiente commerciale" loading="lazy" decoding="async"/></div>
+  </div>
+
+  <div class="servizio-row">
+    <div class="servizio-info" style="padding:4.5rem 3rem 4.5rem 6vw">
+      <div class="serv-number">07</div>
+      <h2>Impiantistica Termica</h2>
+      <p>Gli impianti termici incidono sul comfort quotidiano, sui consumi e sul valore dell'immobile. Ci occupiamo di installazione, sostituzione e predisposizione di sistemi per riscaldamento, climatizzazione, caldaie, radiatori, split e soluzioni integrate nelle ristrutturazioni. L'obiettivo &egrave; scegliere una soluzione funzionale, proporzionata agli ambienti e compatibile con le esigenze del cliente.</p>
+      <p>Quando il lavoro rientra in una ristrutturazione pi&ugrave; ampia, coordiniamo la parte termica con opere murarie, impianti elettrici e finiture, cos&igrave; da evitare tagli inutili, passaggi disordinati o interventi correttivi a lavori finiti. Valutiamo posizionamenti, accessibilit&agrave; per manutenzione, resa degli ambienti e pulizia estetica dell'installazione. In questo modo l'impianto non &egrave; un elemento aggiunto, ma una parte integrata del progetto.</p>
+      <div class="serv-tags">
+        <span class="serv-tag">Caldaie</span>
+        <span class="serv-tag">Climatizzatori</span>
+        <span class="serv-tag">Riscaldamento a pavimento</span>
+      </div>
+      <a class="serv-more" href="contatti.html">Richiedi informazioni →</a>
+    </div>
+    <div class="servizio-visual"><img src="assets/lavoro-08.webp" alt="Ambiente commerciale con impianto di climatizzazione integrato" loading="lazy" decoding="async"/></div>
+  </div>
+
+  <div class="servizio-row">
+    <div class="servizio-info" style="padding:4.5rem 6vw 4.5rem 3rem">
       <div class="serv-number">08</div>
       <h2>Murature</h2>
       <p>Le opere murarie sono la base di molti interventi: demolizioni, costruzione di tramezzi, apertura di varchi, ripristini, intonaci, consolidamenti e modifiche distributive. Ogni lavorazione viene valutata con attenzione perch&eacute; una muratura ben eseguita condiziona impianti, finiture, serramenti, pavimenti e qualit&agrave; finale dell'intero cantiere.</p>
@@ -254,10 +286,20 @@
         <span class="serv-tag">Demolizione</span>
         <span class="serv-tag">Consolidamento</span>
       </div>
+      <a class="serv-more" href="contatti.html">Richiedi informazioni →</a>
     </div>
     <div class="servizio-visual"><img src="assets/lavoro-09.webp" alt="Realizzazione artigianale di una copertura in legno" loading="lazy" decoding="async"/></div>
   </div>
 </section>
+
+<div class="garanzie">
+  <strong>Con ogni intervento garantiamo</strong>
+  <span class="garanzie-item">✔ Sopralluogo iniziale</span>
+  <span class="garanzie-item">✔ Preventivo dettagliato</span>
+  <span class="garanzie-item">✔ Coordinamento del cantiere</span>
+  <span class="garanzie-item">✔ Comunicazione costante</span>
+  <span class="garanzie-item">✔ Cura delle finiture</span>
+</div>
 
 <div class="zone">
   <p class="section-tag">Zone Servite</p>
@@ -275,12 +317,12 @@
 
 <div class="cta-strip">
   <div>
-    <h2>Hai bisogno di un servizio?</h2>
-    <p>Contattaci per un sopralluogo e un preventivo gratuito.</p>
+    <h2>Non sai quale servizio fa al caso tuo?</h2>
+    <p>Raccontaci il tuo progetto: ti aiutiamo a individuare la soluzione migliore, con un preventivo gratuito.</p>
   </div>
   <div style="display:flex;gap:1rem;flex-wrap:wrap">
     <a href="https://wa.me/393475930035" target="_blank" class="btn" style="background:#25D366;color:#fff">💬 WhatsApp</a>
-    <a class='btn' href='contatti.html' style='background:#fff;color:var(--green)'>Preventivo Gratuito</a>
+    <a class='btn' href='contatti.html' style='background:#fff;color:var(--green)'>Raccontaci il tuo progetto →</a>
   </div>
 </div>
 
@@ -294,7 +336,7 @@
     <div class="footer-col"><h5>Pagine</h5><ul><li><a href='index.html'>Home</a></li><li><a href='chi-siamo.html'>Chi Siamo</a></li><li><a href='servizi.html'>Servizi</a></li><li><a href='lavora.html'>Lavora con Noi</a></li><li><a href='contatti.html'>Contatti</a></li></ul></div>
     <div class="footer-col"><h5>Contatti</h5><ul><li><a href="tel:+393475930035">+39 347 593 0035</a></li><li><a href="mailto:sitomedilizia@gmail.com">sitomedilizia@gmail.com</a></li><li><a href="https://wa.me/393475930035" target="_blank">WhatsApp</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><span>© 2026 Sitom Edilizia Srl</span><span>Realizzato con amore da <a href="https://msha.ke/vgwebdesigner/" target="_blank" rel="noopener">vgwebdesigner</a></span><span>Titolare: Alessandro Sollecchio</span><span><button type="button" class="cc-footer-link" data-cookie-consent-open>Rivedi le tue scelte sui cookie</button></span></div>
+  <div class="footer-bottom"><span>© 2026 Sitom Edilizia Srl</span><span>Realizzato con amore da <a href="https://msha.ke/vgwebdesigner/" target="_blank" rel="noopener">vgwebdesigner</a></span><span><a href="privacy-cookie.html">Privacy &amp; Cookie Policy</a></span><span><button type="button" class="cc-footer-link" data-cookie-consent-open>Rivedi le tue scelte sui cookie</button></span></div>
 </footer>
 <script>
   const ham=document.getElementById('ham'),mob=document.getElementById('mobileMenu');

@@ -246,7 +246,7 @@
   });
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const revealItems = document.querySelectorAll('.hero-brand-mark,.hero-eyebrow,.hero-title,.hero-sub,.hero-actions,.trust-item,.about-strip>*,.section-bridge-inner,.serv-mini-card,.servizio-row,.zone>*,.work-gallery-head,.work-card,.info-card,.contact-form,.cv-form,.cta-strip>*');
+  const revealItems = document.querySelectorAll('.hero-brand-mark,.hero-eyebrow,.hero-title,.hero-sub,.hero-actions,.trust-item,.about-strip>*,.section-bridge-inner,.serv-mini-card,.servizio-row,.zone>*,.work-gallery-head,.work-card,.info-card,.contact-form,.cv-form,.cta-strip>*,.storia-text>*,.tl-item,.valore-card,.team-card,.oggi-item,.garanzie-item,.profilo-card,.processo-card,.info-block,.wa-block,.next-steps,.content-photo');
   if (!reduceMotion && 'IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {

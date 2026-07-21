@@ -29,6 +29,9 @@
   <style>
     :root { --green:#1a7a38;--green-light:#219a47;--green-dark:#125429;--black:#0f0f0f;--text:#2a2a2a;--gray:#6b6b6b;--line:#e4e4e0;--bg:#fafaf8;--white:#ffffff; }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :focus-visible{outline:2px solid var(--green-light);outline-offset:3px}
+    .skip-link{position:absolute;left:1rem;top:-60px;background:var(--green);color:#fff;padding:.85rem 1.25rem;z-index:1000;text-decoration:none;font-size:.85rem;font-weight:700;transition:top .2s}
+    .skip-link:focus{top:1rem}
     html{scroll-behavior:smooth}
     body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
     nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 6vw;height:72px}
@@ -45,33 +48,37 @@
     .mobile-menu a{text-decoration:none;color:var(--text);font-size:1rem}
     .mobile-menu.open{display:flex}
     section{padding:6rem 6vw}
-    .section-tag{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);font-weight:500;margin-bottom:1rem}
-    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:700;line-height:1.1;color:var(--black);margin-bottom:1.25rem}
-    .btn{display:inline-block;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.06em;padding:13px 28px;transition:all 0.2s}
-    .btn-green{background:var(--green);color:#fff}
+    .section-tag{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);font-weight:500;margin-bottom:1.15rem}
+    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:700;line-height:1.1;color:var(--black);margin-bottom:1.5rem}
+    .btn{display:inline-block;text-decoration:none;font-size:0.85rem;font-weight:700;letter-spacing:0.06em;padding:14px 30px;transition:all 0.2s}.btn:hover{transform:translateY(-2px)}
+    .btn-green{background:var(--green);color:#fff;box-shadow:0 10px 30px rgba(26,122,56,.3)}
     .btn-green:hover{background:var(--green-dark)}
     .btn-outline-green{border:1px solid var(--green);color:var(--green)}
     .btn-outline-green:hover{background:var(--green);color:#fff}
 
     /* PAGE HERO */
     .page-hero{
-      margin-top:72px; padding:5rem 6vw 4rem;
-      background:var(--bg); border-bottom:1px solid var(--line);
+      margin-top:72px; padding:7rem 6vw 5rem;
+      position:relative; overflow:hidden; background:var(--black);
     }
-    .page-hero-inner{max-width:700px}
-    .page-hero .section-title{margin-bottom:1rem}
-    .page-hero p{font-size:1.05rem;color:var(--gray);line-height:1.85}
+    .page-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85;}
+    .page-hero-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,15,15,.55) 0%,rgba(15,15,15,.8) 100%);z-index:1;}
+    .page-hero-inner{position:relative;z-index:2;max-width:700px}
+    .page-hero .section-tag{color:var(--green-light)}
+    .page-hero .section-title{margin-bottom:1rem;color:#fff}
+    .page-hero p{font-size:1.05rem;color:rgba(255,255,255,0.8);line-height:1.85}
 
     /* STORIA */
     .storia{background:var(--white)}
-    .storia-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
-    .storia-text p{font-size:0.95rem;color:var(--gray);line-height:1.85;margin-bottom:1.25rem}
+    .storia-grid{display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:start}
+    .storia-text p{font-size:0.95rem;color:var(--gray);line-height:1.85;margin-bottom:1.5rem}
+    .storia-text strong{color:var(--black);font-weight:700}
     .storia-text blockquote{
       border-left:2px solid var(--green);padding-left:1.25rem;
       font-family:'Cormorant Garamond',serif;font-size:1.3rem;
       color:var(--green-dark);font-style:italic;margin:2rem 0;line-height:1.5
     }
-    .storia-visual{position:relative;padding-top:1rem;display:grid;grid-template-columns:minmax(210px,.82fr) 1fr;gap:1.5rem;align-items:start}
+    .storia-visual{position:relative;padding-top:1rem;display:grid;grid-template-columns:minmax(210px,.82fr) 1fr;gap:2.25rem;align-items:start}
     .storia-visual .timeline{grid-column:1;grid-row:1;margin-top:0!important;padding-top:.25rem}
     .storia-visual .content-photo{grid-column:2;grid-row:1}
     .photo-box{
@@ -80,29 +87,38 @@
       color:#aaa;font-size:0.8rem;text-align:center;line-height:2
     }
     .timeline{margin-top:3rem}
-    .tl-item{display:flex;gap:1.5rem;padding-bottom:2rem;position:relative}
-    .tl-item::before{content:'';position:absolute;left:14px;top:32px;bottom:0;width:1px;background:var(--line)}
+    .tl-item{display:flex;gap:1.5rem;padding-bottom:2rem;position:relative;transition:transform .2s ease}
+    .tl-item::before{content:'';position:absolute;left:14px;top:32px;bottom:0;width:2px;background:var(--green);opacity:.2}
     .tl-item:last-child::before{display:none}
-    .tl-dot{width:28px;height:28px;border-radius:50%;background:var(--green);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center}
+    .tl-item:hover{transform:translateX(4px)}
+    .tl-dot{width:28px;height:28px;border-radius:50%;background:var(--green);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:transform .2s ease}
+    .tl-item:hover .tl-dot{transform:scale(1.15)}
     .tl-dot span{width:8px;height:8px;background:#fff;border-radius:50%;display:block}
-    .tl-year{font-size:0.75rem;letter-spacing:0.1em;color:var(--green);font-weight:500;text-transform:uppercase;margin-bottom:0.3rem}
-    .tl-title{font-weight:500;font-size:0.95rem;margin-bottom:0.3rem}
+    .tl-year{font-size:0.95rem;letter-spacing:0.06em;color:var(--green);font-weight:700;text-transform:uppercase;margin-bottom:0.35rem;font-family:'Cormorant Garamond',serif}
+    .tl-title{font-weight:600;font-size:0.95rem;margin-bottom:0.35rem}
     .tl-desc{font-size:0.85rem;color:var(--gray);line-height:1.7}
+
+    /* OGGI SITOM */
+    .oggi-band{background:var(--green);padding:2.25rem 6vw;display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;text-align:center}
+    .oggi-band strong{color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700}
+    .oggi-item{display:inline-flex;align-items:center;gap:.5rem;color:rgba(255,255,255,0.92);font-size:0.9rem;font-weight:500}
 
     /* VALORI */
     .valori{background:var(--bg)}
     .valori-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);margin-top:3rem}
-    .valore-card{background:#fff;padding:2.5rem 2rem}
+    .valore-card{background:#fff;padding:2.5rem 2rem;transition:transform .2s ease,box-shadow .2s ease}
+    .valore-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(15,15,15,.08)}
     .valore-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:var(--line);line-height:1;margin-bottom:1rem}
-    .valore-card h3{font-size:0.95rem;font-weight:500;margin-bottom:0.5rem}
+    .valore-card h3{font-size:0.95rem;font-weight:600;margin-bottom:0.65rem}
     .valore-card p{font-size:0.85rem;color:var(--gray);line-height:1.7}
 
     /* TEAM */
     .team{background:var(--white)}
     .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3rem}
-    .team-card{display:flex;gap:1.5rem;padding:2rem;border:1px solid var(--line)}
+    .team-card{display:flex;gap:1.5rem;padding:2rem;border:1px solid var(--line);transition:transform .2s ease,box-shadow .2s ease}
+    .team-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(15,15,15,.08)}
     .team-avatar{width:64px;height:64px;border-radius:50%;background:var(--green);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:#fff}
-    .team-card h3{font-size:1rem;font-weight:500;margin-bottom:0.2rem}
+    .team-card h3{font-size:1rem;font-weight:600;margin-bottom:0.3rem}
     .team-card .role{font-size:0.78rem;color:var(--green);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.5rem}
     .team-card p{font-size:0.85rem;color:var(--gray);line-height:1.7}
 
@@ -111,15 +127,15 @@
     .cta-strip h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:#fff;font-weight:700}
     .cta-strip p{color:rgba(255,255,255,0.75);font-size:0.9rem;margin-top:0.4rem}
 
-    footer{background:#0f0f0f;color:rgba(255,255,255,0.5);padding:4rem 6vw 2.5rem}
+    footer{background:#0f0f0f;color:rgba(255,255,255,0.62);padding:4rem 6vw 2.5rem}
     .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.07)}
     .footer-logo{height:90px;width:auto;background:#fff;padding:8px;opacity:1;margin-bottom:1.25rem}
-    .footer-about p{font-size:0.85rem;line-height:1.8;max-width:280px}
-    .footer-slogan{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(255,255,255,0.25);font-size:0.95rem;margin-top:1rem}
-    .footer-col h5{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.25rem;font-weight:500}
+    .footer-about p{font-size:0.85rem;line-height:1.8;max-width:280px;color:rgba(255,255,255,0.65)}
+    .footer-slogan{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(255,255,255,0.4);font-size:0.95rem;margin-top:1rem}
+    .footer-col h5{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:1.25rem;font-weight:500}
     .footer-col ul{list-style:none}
     .footer-col ul li{margin-bottom:0.65rem}
-    .footer-col ul li a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
+    .footer-col ul li a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
     .footer-col ul li a:hover{color:var(--green-light)}
     .footer-bottom{padding-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;font-size:0.78rem}
 
@@ -139,6 +155,7 @@
   <link rel="stylesheet" href="assets/css/cookie-consent.css"/><link rel="stylesheet" href="assets/site-enhancements.css"/>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Vai al contenuto principale</a>
 
 <nav>
   <a class='nav-logo' href='index.html'><img src="assets/logo-sitom.webp" alt="Sitom Edilizia"/></a>
@@ -156,7 +173,9 @@
   <a href='servizi.html'>Servizi</a><a href='lavora.html'>Lavora con Noi</a><a href='contatti.html'>Contatti</a>
 </div>
 
-<div class="page-hero">
+<div class="page-hero" id="main-content">
+  <img class="page-hero-img" src="assets/lavoro-15.webp" alt="Cucina su misura ristrutturata da Sitom Edilizia" fetchpriority="high"/>
+  <div class="page-hero-bg"></div>
   <div class="page-hero-inner">
     <p class="section-tag">Chi Siamo</p>
     <h1 class="section-title">Artigiani veri,<br/>da oltre 10 anni.</h1>
@@ -169,8 +188,10 @@
     <div class="storia-text">
       <p class="section-tag">La Storia</p>
       <h2 class="section-title">Una storia di<br/>passione e mestiere.</h2>
-      <p>Alessandro Sollecchia è geometra diplomato e ha lavorato come tecnico impiegato fino al 2012, anno in cui la ditta dove lavorava ha dichiarato fallimento. Una crisi che si è trasformata in un'opportunità: nel 2013 si è messo in proprio come artigiano specializzato nelle ristrutturazioni.</p>
-      <p>Da subito ha stretto una collaborazione fondamentale con un artigiano più esperto di lui — un vero mastro — che, oltre ad avergli insegnato il mestiere, è diventato un punto di riferimento costante. Ancora oggi continua ad affiancare e consigliare Alessandro.</p>
+      <p>Alessandro Sollecchia è geometra diplomato. Ha lavorato come tecnico impiegato fino al 2012, quando la ditta dove lavorava ha dichiarato fallimento.</p>
+      <p>Una crisi che si è trasformata in un'opportunità: nel 2013 si è messo in proprio come <strong>artigiano specializzato nelle ristrutturazioni</strong>.</p>
+      <p>Da subito ha stretto una collaborazione fondamentale con un artigiano più esperto di lui — un vero mastro.</p>
+      <p>Oltre ad avergli insegnato il mestiere, è diventato un punto di riferimento costante: ancora oggi continua ad affiancare e consigliare Alessandro.</p>
       <blockquote>"In tutti questi anni la mia pubblicità è stata il passaparola. La qualità si vede, non si racconta."</blockquote>
       <p>Dopo anni di crescita come artigiano, Alessandro ha fondato Sitom Edilizia Srl, portando sul mercato tutta l'esperienza accumulata sul campo — quella vera, quella che si impara sui cantieri.</p>
     </div>
@@ -213,6 +234,14 @@
     </div>
   </div>
 </section>
+
+<div class="oggi-band">
+  <strong>Oggi Sitom significa</strong>
+  <span class="oggi-item">✔ Organizzazione</span>
+  <span class="oggi-item">✔ Comunicazione</span>
+  <span class="oggi-item">✔ Qualità esecutiva</span>
+  <span class="oggi-item">✔ Un unico referente</span>
+</div>
 
 <section class="valori">
   <p class="section-tag">Valori</p>
@@ -261,11 +290,11 @@
 
 <div class="cta-strip">
   <div>
-    <h2>Vuoi lavorare con noi?</h2>
-    <p>Sia come cliente che come collaboratore, siamo sempre aperti a nuove relazioni.</p>
+    <h2>Ogni ristrutturazione inizia da una conversazione.</h2>
+    <p>Raccontaci il tuo progetto, oppure candidati per lavorare con noi.</p>
   </div>
   <div style="display:flex;gap:1rem;flex-wrap:wrap">
-    <a class='btn' href='contatti.html' style='background:#fff;color:var(--green)'>Richiedi Preventivo</a>
+    <a class='btn' href='contatti.html' style='background:#fff;color:var(--green)'>Raccontami il tuo progetto</a>
     <a class='btn' href='lavora.html' style='border:1px solid rgba(255,255,255,0.4);color:#fff'>Lavora con Noi</a>
   </div>
 </div>

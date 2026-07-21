@@ -29,6 +29,9 @@
   <style>
     :root{--green:#1a7a38;--green-light:#219a47;--green-dark:#125429;--black:#0f0f0f;--text:#2a2a2a;--gray:#6b6b6b;--line:#e4e4e0;--bg:#fafaf8;--white:#ffffff}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :focus-visible{outline:2px solid var(--green-light);outline-offset:3px}
+    .skip-link{position:absolute;left:1rem;top:-60px;background:var(--green);color:#fff;padding:.85rem 1.25rem;z-index:1000;text-decoration:none;font-size:.85rem;font-weight:700;transition:top .2s}
+    .skip-link:focus{top:1rem}
     html{scroll-behavior:smooth}
     body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
     nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 6vw;height:72px}
@@ -44,15 +47,17 @@
     .mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:1.5rem 6vw;z-index:99;flex-direction:column;gap:1.25rem}
     .mobile-menu a{text-decoration:none;color:var(--text);font-size:1rem}
     .mobile-menu.open{display:flex}
-    section{padding:6rem 6vw}
+    section{padding:6.5rem 6vw}
     .section-tag{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);font-weight:500;margin-bottom:1rem}
     .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:700;line-height:1.1;color:var(--black);margin-bottom:1.25rem}
 
-    .page-hero{margin-top:72px;padding:5rem 6vw 4rem;background:var(--black);position:relative;overflow:hidden}
-    .page-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,122,56,0.3),transparent)}
-    .page-hero .section-tag{color:var(--green-light);position:relative;z-index:1}
-    .page-hero .section-title{color:#fff;position:relative;z-index:1}
-    .page-hero p{color:rgba(255,255,255,0.6);font-size:1rem;line-height:1.85;max-width:560px;position:relative;z-index:1}
+    .page-hero{margin-top:72px;padding:7rem 6vw 5rem;background:var(--black);position:relative;overflow:hidden}
+    .page-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85}
+    .page-hero-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,15,15,.55) 0%,rgba(15,15,15,.8) 100%);z-index:1}
+    .page-hero-inner{position:relative;z-index:2;max-width:700px}
+    .page-hero .section-tag{color:var(--green-light)}
+    .page-hero .section-title{color:#fff}
+    .page-hero p{color:rgba(255,255,255,0.8);font-size:1rem;line-height:1.85;max-width:560px}
 
     .lavora-main{background:var(--white)}
     .lavora-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
@@ -86,24 +91,35 @@
     /* PROFILI */
     .profili{background:var(--bg)}
     .profili-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:3rem}
-    .profilo-card{background:#fff;padding:2rem 1.75rem}
+    .profilo-card{background:#fff;padding:2rem 1.75rem;position:relative;transition:transform .2s ease,box-shadow .2s ease}
+    .profilo-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(15,15,15,.08)}
+    .profilo-badge{position:absolute;top:1.25rem;right:1.25rem;background:var(--bg);color:var(--green);font-size:0.62rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
     .profilo-icon{font-size:1.5rem;margin-bottom:1rem}
     .profilo-card h3{font-size:0.95rem;font-weight:500;margin-bottom:0.4rem}
     .profilo-card p{font-size:0.82rem;color:var(--gray);line-height:1.6}
+
+    /* PROCESSO */
+    .processo{background:var(--white)}
+    .processo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);margin-top:3rem;border:1px solid var(--line)}
+    .processo-card{background:#fff;padding:2.25rem 1.75rem;transition:transform .2s ease,box-shadow .2s ease}
+    .processo-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(15,15,15,.08)}
+    .processo-num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;color:var(--line);line-height:1;margin-bottom:0.85rem}
+    .processo-card h3{font-size:0.92rem;font-weight:600;margin-bottom:0.4rem}
+    .processo-card p{font-size:0.82rem;color:var(--gray);line-height:1.65}
 
     .cta-strip{background:var(--green);padding:4rem 6vw;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
     .cta-strip h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:#fff;font-weight:700}
     .cta-strip p{color:rgba(255,255,255,0.75);font-size:0.9rem;margin-top:0.4rem}
 
-    footer{background:#0f0f0f;color:rgba(255,255,255,0.5);padding:4rem 6vw 2.5rem}
+    footer{background:#0f0f0f;color:rgba(255,255,255,0.62);padding:4rem 6vw 2.5rem}
     .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.07)}
     .footer-logo{height:90px;width:auto;background:#fff;padding:8px;opacity:1;margin-bottom:1.25rem}
-    .footer-about p{font-size:0.85rem;line-height:1.8;max-width:280px}
-    .footer-slogan{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(255,255,255,0.25);font-size:0.95rem;margin-top:1rem}
-    .footer-col h5{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.25rem;font-weight:500}
+    .footer-about p{font-size:0.85rem;line-height:1.8;max-width:280px;color:rgba(255,255,255,0.65)}
+    .footer-slogan{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(255,255,255,0.4);font-size:0.95rem;margin-top:1rem}
+    .footer-col h5{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:1.25rem;font-weight:500}
     .footer-col ul{list-style:none}
     .footer-col ul li{margin-bottom:0.65rem}
-    .footer-col ul li a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
+    .footer-col ul li a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
     .footer-col ul li a:hover{color:var(--green-light)}
     .footer-bottom{padding-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;font-size:0.78rem}
 
@@ -111,15 +127,17 @@
       .nav-links{display:none}.hamburger{display:flex}
       .lavora-grid{grid-template-columns:1fr;gap:3rem}
       .profili-grid{grid-template-columns:1fr}
+      .processo-grid{grid-template-columns:repeat(2,1fr)}
       .form-row{grid-template-columns:1fr}
       .footer-top{grid-template-columns:1fr;gap:2rem}
       .cta-strip{flex-direction:column;align-items:flex-start}
     }
-    @media(max-width:580px){section{padding:4rem 5vw}}
+    @media(max-width:580px){section{padding:4rem 5vw}.processo-grid{grid-template-columns:1fr}}
   </style>
   <link rel="stylesheet" href="assets/css/cookie-consent.css"/><link rel="stylesheet" href="assets/site-enhancements.css"/>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Vai al contenuto principale</a>
 
 <nav>
   <a class='nav-logo' href='index.html'><img src="assets/logo-sitom.webp" alt="Sitom Edilizia"/></a>
@@ -137,31 +155,36 @@
   <a href='servizi.html'>Servizi</a><a href='lavora.html'>Lavora con Noi</a><a href='contatti.html'>Contatti</a>
 </div>
 
-<div class="page-hero">
-  <p class="section-tag">Lavora con Noi</p>
-  <h1 class="section-title">Entra nel team<br/>Sitom Edilizia.</h1>
-  <p>Cerchiamo artigiani appassionati che condividano i nostri valori: qualità, precisione e rispetto per il lavoro ben fatto.</p>
+<div class="page-hero" id="main-content">
+  <img class="page-hero-img" src="assets/lavoro-17.webp" alt="Cantiere Sitom Edilizia durante la posa del pavimento" fetchpriority="high"/>
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-inner">
+    <p class="section-tag">Lavora con Noi</p>
+    <h1 class="section-title">Entra nel team<br/>Sitom Edilizia.</h1>
+    <p>Cerchiamo persone che abbiano voglia di costruire il proprio futuro insieme a noi, con la stessa cura e passione che mettiamo in ogni cantiere.</p>
+  </div>
 </div>
 
 <section class="lavora-main">
   <div class="lavora-grid">
     <div class="lavora-text">
-      <p class="section-tag">Perché Sitom</p>
+      <p class="section-tag">Perché Lavorare con Sitom</p>
       <h2 class="section-title">Un posto dove il<br/>mestiere conta.</h2>
       <p>Siamo un'impresa in crescita e cerchiamo persone serie, che sappiano lavorare bene con le mani e abbiano rispetto per il lavoro. Non importa se sei alle prime armi o un professionista navigato.</p>
       <p>Lavorerai su cantieri a Roma e provincia, a fianco di artigiani esperti, in un ambiente dove la qualità viene prima di tutto il resto.</p>
+      <p>Da noi si lavora in squadra, ci si aiuta tra colleghi e chi entra viene seguito passo passo, non lasciato solo davanti al primo cantiere.</p>
       <ul class="benefit-list">
         <li class="benefit-item"><div class="benefit-check"></div><span>Ambiente di lavoro serio e rispettoso</span></li>
-        <li class="benefit-item"><div class="benefit-check"></div><span>Cantieri a Roma e provincia</span></li>
-        <li class="benefit-item"><div class="benefit-check"></div><span>Collaborazione con artigiani esperti</span></li>
+        <li class="benefit-item"><div class="benefit-check"></div><span>Cantieri organizzati, a Roma e provincia</span></li>
+        <li class="benefit-item"><div class="benefit-check"></div><span>Squadra affiatata di artigiani esperti</span></li>
         <li class="benefit-item"><div class="benefit-check"></div><span>Retribuzione in linea con le competenze</span></li>
         <li class="benefit-item"><div class="benefit-check"></div><span>Possibilità di crescita professionale</span></li>
-        <li class="benefit-item"><div class="benefit-check"></div><span>Impresa certificata e regolare</span></li>
+        <li class="benefit-item"><div class="benefit-check"></div><span>Attenzione alla qualità in ogni cantiere</span></li>
       </ul>
     </div>
     <div>
       <form class="cv-form" id="careerForm">
-        <h3>Invia la tua candidatura</h3>
+        <h3>Parlaci di te</h3>
         <p class="form-note">Lasciaci i tuoi dati e ti contatteremo noi. Basta anche solo un nome e un numero.</p>
         <div class="form-row">
           <div class="form-group">
@@ -200,7 +223,7 @@
           <label>Presentati (facoltativo)</label>
           <textarea id="cv-msg" placeholder="Racconta brevemente la tua esperienza…"></textarea>
         </div>
-        <label class="privacy-check"><input type="checkbox" id="cv-privacy" required/><span>Ho letto e accetto la <a href="privacy-cookie.html" target="_blank">Privacy Policy</a> e autorizzo il trattamento dei dati per la candidatura. *</span></label><button class="btn-submit" type="submit">Invia candidatura su WhatsApp</button>
+        <label class="privacy-check"><input type="checkbox" id="cv-privacy" required/><span>Ho letto e accetto la <a href="privacy-cookie.html" target="_blank">Privacy Policy</a> e autorizzo il trattamento dei dati per la candidatura. *</span></label><button class="btn-submit" type="submit">Entra a far parte del team Sitom →</button>
         <p class="form-help">Si aprirà WhatsApp con la candidatura già compilata.</p></form>
       <p style="font-size:0.8rem;color:var(--gray);margin-top:1rem;line-height:1.6">
         In alternativa scrivi direttamente a <a href="mailto:sitomedilizia@gmail.com" style="color:var(--green)">sitomedilizia@gmail.com</a> oppure su <a href="https://wa.me/393475930035" style="color:var(--green)" target="_blank">WhatsApp</a>.
@@ -213,12 +236,39 @@
   <p class="section-tag">Chi Cerchiamo</p>
   <h2 class="section-title">Profili ricercati.</h2>
   <div class="profili-grid">
-    <div class="profilo-card"><div class="profilo-icon">🧱</div><h3>Muratore</h3><p>Esperienza in costruzioni, demolizioni, tramezzi e opere in laterizio.</p></div>
-    <div class="profilo-card"><div class="profilo-icon">🏠</div><h3>Piastrellista</h3><p>Posa pavimenti e rivestimenti in ceramica, gres e materiali lapidei.</p></div>
-    <div class="profilo-card"><div class="profilo-icon">🎨</div><h3>Imbianchino</h3><p>Pitture interne ed esterne, finiture decorative, stucchi.</p></div>
-    <div class="profilo-card"><div class="profilo-icon">⚡</div><h3>Elettricista</h3><p>Impianti civili e industriali, messa a norma, certificazioni.</p></div>
-    <div class="profilo-card"><div class="profilo-icon">🔧</div><h3>Idraulico</h3><p>Impianti idrosanitari, bagni, cucine, riscaldamento.</p></div>
-    <div class="profilo-card"><div class="profilo-icon">🧲</div><h3>Cartongessista</h3><p>Controsoffitti, pareti, rivestimenti, isolamenti acustici.</p></div>
+    <div class="profilo-card"><span class="profilo-badge">Sempre aperta</span><div class="profilo-icon">🧱</div><h3>Muratore</h3><p>Esperienza in costruzioni, demolizioni, tramezzi e opere in laterizio.</p></div>
+    <div class="profilo-card"><span class="profilo-badge">Sempre aperta</span><div class="profilo-icon">🏠</div><h3>Piastrellista</h3><p>Posa pavimenti e rivestimenti in ceramica, gres e materiali lapidei.</p></div>
+    <div class="profilo-card"><span class="profilo-badge">Sempre aperta</span><div class="profilo-icon">🎨</div><h3>Imbianchino</h3><p>Pitture interne ed esterne, finiture decorative, stucchi.</p></div>
+    <div class="profilo-card"><span class="profilo-badge">Sempre aperta</span><div class="profilo-icon">⚡</div><h3>Elettricista</h3><p>Impianti civili e industriali, messa a norma, certificazioni.</p></div>
+    <div class="profilo-card"><span class="profilo-badge">Sempre aperta</span><div class="profilo-icon">🔧</div><h3>Idraulico</h3><p>Impianti idrosanitari, bagni, cucine, riscaldamento.</p></div>
+    <div class="profilo-card"><span class="profilo-badge">Sempre aperta</span><div class="profilo-icon">🧲</div><h3>Cartongessista</h3><p>Controsoffitti, pareti, rivestimenti, isolamenti acustici.</p></div>
+  </div>
+</section>
+
+<section class="processo">
+  <p class="section-tag">Come Funziona</p>
+  <h2 class="section-title">Dalla candidatura<br/>all'ingresso in squadra.</h2>
+  <div class="processo-grid">
+    <div class="processo-card">
+      <div class="processo-num">01</div>
+      <h3>Invii la candidatura</h3>
+      <p>Compili il modulo o scrivi su WhatsApp: bastano pochi dati per iniziare.</p>
+    </div>
+    <div class="processo-card">
+      <div class="processo-num">02</div>
+      <h3>Ti contattiamo</h3>
+      <p>Ti ricontattiamo per capire esperienza, disponibilità e ruolo più adatto.</p>
+    </div>
+    <div class="processo-card">
+      <div class="processo-num">03</div>
+      <h3>Colloquio</h3>
+      <p>Un incontro diretto, anche informale, per conoscerci meglio.</p>
+    </div>
+    <div class="processo-card">
+      <div class="processo-num">04</div>
+      <h3>Ingresso in squadra</h3>
+      <p>Entri nel team Sitom e vieni seguito fin dal primo cantiere.</p>
+    </div>
   </div>
 </section>
 

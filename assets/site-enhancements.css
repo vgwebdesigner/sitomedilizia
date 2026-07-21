@@ -308,6 +308,15 @@ select:focus-visible {
   font-size: .76rem;
 }
 
+.work-card figcaption .work-loc {
+  display: block;
+  color: #999;
+  font-size: .66rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
 .work-lightbox {
   width: min(94vw, 1200px);
   max-width: none;
@@ -362,7 +371,6 @@ select:focus-visible {
   transition: transform .22s ease, box-shadow .22s ease;
 }
 
-.section-tag,
 .wa-kicker {
   font-family: 'DM Sans', sans-serif;
   font-size: .72rem;
@@ -601,7 +609,19 @@ select:focus-visible {
 .motion-ready .info-card,
 .motion-ready .contact-form,
 .motion-ready .cv-form,
-.motion-ready .cta-strip > * {
+.motion-ready .cta-strip > *,
+.motion-ready .storia-text > *,
+.motion-ready .tl-item,
+.motion-ready .valore-card,
+.motion-ready .team-card,
+.motion-ready .oggi-item,
+.motion-ready .garanzie-item,
+.motion-ready .profilo-card,
+.motion-ready .processo-card,
+.motion-ready .info-block,
+.motion-ready .wa-block,
+.motion-ready .next-steps,
+.motion-ready .content-photo {
   opacity: 0;
   transform: translateY(18px);
   transition: opacity .7s ease, transform .7s ease;
