@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="format-detection" content="telephone=no"/>
   <title>Servizi – Sitom Edilizia Srl Roma</title>
   <meta name="description" content="Ristrutturazioni, impiantistica idraulica, termica ed elettrica, cartongesso, tinteggiature, pavimentazioni e murature a Roma e provincia."/>
     <meta name="robots" content="index,follow"/>
@@ -27,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
-    :root{--green:#1a7a38;--green-light:#219a47;--green-dark:#125429;--black:#0f0f0f;--text:#2a2a2a;--gray:#6b6b6b;--line:#e4e4e0;--bg:#fafaf8;--white:#ffffff}
+    :root{--green:#1a7a38;--green-light:#219a47;--green-dark:#125429;--black:#0f0f0f;--text:#2a2a2a;--gray:#6b6b6b;--line:#e4e4e0;--bg:#f4f2ec;--white:#ffffff}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :focus-visible{outline:2px solid var(--green-light);outline-offset:3px}
     .skip-link{position:absolute;left:1rem;top:-60px;background:var(--green);color:#fff;padding:.85rem 1.25rem;z-index:1000;text-decoration:none;font-size:.85rem;font-weight:700;transition:top .2s}
@@ -83,7 +84,7 @@
     .serv-more{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.5rem;color:var(--green);font-size:0.85rem;font-weight:700;text-decoration:none}
     .serv-more:hover{color:var(--green-dark)}
     .servizio-visual{background:var(--bg);display:flex;align-items:stretch;justify-content:center;min-height:100%;color:#bbb;font-size:0.8rem;text-align:center;line-height:2;overflow:hidden}
-    .servizio-visual img{transition:transform .5s ease}
+    .servizio-visual img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
     .servizio-row:hover .servizio-visual img{transform:scale(1.04)}
 
     /* GARANZIE */
@@ -92,19 +93,19 @@
     .garanzie-item{display:inline-flex;align-items:center;gap:.5rem;color:rgba(255,255,255,0.92);font-size:0.88rem;font-weight:500}
 
     /* ZONE */
-    .zone{background:var(--bg);padding:5rem 6vw;text-align:center}
+    .zone{background:var(--bg);padding:3.5rem 6vw;text-align:center}
     .zone .section-tag{color:var(--green)}
-    .zone .section-title{color:var(--black);margin:0 auto 1rem}
-    .zone p{color:var(--gray);font-size:0.9rem;max-width:520px;margin:0 auto 2.5rem;line-height:1.8}
-    .zone-tags{display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;max-width:600px;margin:0 auto}
-    .zone-tag{padding:8px 20px;font-size:0.82rem;color:var(--gray);border:1px solid var(--line);background:#fff}
+    .zone .section-title{color:var(--black);margin:0 auto .75rem}
+    .zone p{color:var(--gray);font-size:0.9rem;max-width:520px;margin:0 auto 1.5rem;line-height:1.8}
+    .zone-tags{display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:center;max-width:900px;margin:0 auto}
+    .zone-tag{padding:7px 18px;font-size:0.82rem;color:var(--gray);border:1px solid var(--line);background:#fff}
     .zone-tag.main{background:var(--green);color:#fff;border-color:var(--green);font-weight:500}
 
     .cta-strip{background:var(--green);padding:4rem 6vw;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
     .cta-strip h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:#fff;font-weight:700}
     .cta-strip p{color:rgba(255,255,255,0.75);font-size:0.9rem;margin-top:0.4rem}
 
-    footer{background:#0f0f0f;color:rgba(255,255,255,0.62);padding:4rem 6vw 2.5rem}
+    footer{background:#0f0f0f;color:rgba(255,255,255,0.62);padding:4rem 6vw 6.5rem}
     .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.07)}
     .footer-logo{height:90px;width:auto;background:#fff;padding:8px;opacity:1;margin-bottom:1.25rem}
     .footer-about p{font-size:0.85rem;line-height:1.8;max-width:280px;color:rgba(255,255,255,0.65)}
@@ -153,7 +154,7 @@
   <div class="page-hero-bg"></div>
   <div class="page-hero-inner">
     <p class="section-tag">Servizi</p>
-    <h1 class="section-title">Tutto ciò che serve<br/>alla tua casa.</h1>
+    <h1 class="section-title">Tutto ciò che serve alla tua casa.</h1>
     <p>Dalla ristrutturazione completa alle finiture di dettaglio. Lavoriamo per privati e aziende, con la stessa cura artigianale in ogni cantiere.</p>
     <p style="margin-top:1rem">Dalla piccola ristrutturazione agli interventi più complessi, ti accompagniamo in ogni fase del progetto.</p>
   </div>
@@ -336,13 +337,8 @@
     <div class="footer-col"><h5>Pagine</h5><ul><li><a href='index.html'>Home</a></li><li><a href='chi-siamo.html'>Chi Siamo</a></li><li><a href='servizi.html'>Servizi</a></li><li><a href='lavora.html'>Lavora con Noi</a></li><li><a href='contatti.html'>Contatti</a></li></ul></div>
     <div class="footer-col"><h5>Contatti</h5><ul><li><a href="tel:+393475930035">+39 347 593 0035</a></li><li><a href="mailto:sitomedilizia@gmail.com">sitomedilizia@gmail.com</a></li><li><a href="https://wa.me/393475930035" target="_blank">WhatsApp</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><span>© 2026 Sitom Edilizia Srl</span><span>Realizzato con amore da <a href="https://msha.ke/vgwebdesigner/" target="_blank" rel="noopener">vgwebdesigner</a></span><span><a href="privacy-cookie.html">Privacy &amp; Cookie Policy</a></span><span><button type="button" class="cc-footer-link" data-cookie-consent-open>Rivedi le tue scelte sui cookie</button></span></div>
+  <div class="footer-bottom"><span>© 2026 Sitom Edilizia Srl</span><span>Realizzato con amore da <a href="https://msha.ke/vgwebdesigner/" target="_blank" rel="noopener">vgwebdesigner</a></span><span><a href="privacy-cookie.html">Privacy Policy</a></span><span><a href="cookie-policy.html">Cookie Policy</a></span><span><button type="button" class="cc-footer-link" data-cookie-consent-open>Rivedi le tue scelte sui cookie</button></span></div>
 </footer>
-<script>
-  const ham=document.getElementById('ham'),mob=document.getElementById('mobileMenu');
-  ham.addEventListener('click',()=>mob.classList.toggle('open'));
-  document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>mob.classList.remove('open')));
-</script>
 <button class="wa-assistant-trigger" type="button" data-wa-assistant-open aria-label="Apri guida WhatsApp per il sopralluogo">
   <span class="wa-assistant-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h3v-5h6v5h3a1 1 0 0 0 1-1v-9"/></svg></span><span class="wa-assistant-label">Parla con Sitom</span>
 </button>
