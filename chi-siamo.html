@@ -16,11 +16,11 @@
   <meta property="og:description" content="Sitom Edilizia Srl: artigiani edili a Roma dal 2013, specializzati in ristrutturazioni, finiture e gestione completa del cantiere."/>
   <meta property="og:url" content="https://www.sitomedilizia.it/chi-siamo.html"/>
   <meta property="og:site_name" content="Sitom Edilizia Srl"/>
-  <meta property="og:image" content="https://www.sitomedilizia.it/assets/lavoro-12.webp"/>
+  <meta property="og:image" content="https://www.sitomedilizia.it/assets/lavoro-25.webp"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Chi Siamo – Sitom Edilizia Srl Roma"/>
   <meta name="twitter:description" content="Sitom Edilizia Srl: artigiani edili a Roma dal 2013, specializzati in ristrutturazioni, finiture e gestione completa del cantiere."/>
-  <meta name="twitter:image" content="https://www.sitomedilizia.it/assets/lavoro-12.webp"/>
+  <meta name="twitter:image" content="https://www.sitomedilizia.it/assets/lavoro-25.webp"/>
   <link rel="icon" type="image/png" href="assets/favicon.png"/>
   <link rel="apple-touch-icon" href="assets/icon-192.png"/>
   <link rel="manifest" href="site.webmanifest"/>
@@ -59,12 +59,13 @@
 
     /* PAGE HERO */
     .page-hero{
-      margin-top:72px; padding:7rem 6vw 5rem;
+      min-height:100vh; margin-top:72px;
+      display:flex; align-items:center;
       position:relative; overflow:hidden; background:var(--black);
     }
     .page-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85;}
     .page-hero-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,15,15,.55) 0%,rgba(15,15,15,.8) 100%);z-index:1;}
-    .page-hero-inner{position:relative;z-index:2;max-width:780px}
+    .page-hero-inner{position:relative;z-index:2;max-width:780px;padding:0 6vw}
     .page-hero .section-tag{color:var(--green)}
     .page-hero .section-title{margin-bottom:1rem;color:#fff}
     .page-hero p{font-size:1.05rem;color:rgba(255,255,255,0.8);line-height:1.85}
@@ -153,7 +154,7 @@
       .footer-top{grid-template-columns:1fr;gap:2rem}
       .cta-strip{flex-direction:column;align-items:flex-start}
     }
-    @media(max-width:580px){section{padding:4rem 5vw}}
+    @media(max-width:580px){section{padding:4rem 5vw}.page-hero{min-height:calc(100vh - 72px)}.page-hero-inner{padding:0 5vw}}
   </style>
   <link rel="stylesheet" href="assets/css/cookie-consent.css"/><link rel="stylesheet" href="assets/site-enhancements.css"/>
 </head>
@@ -177,7 +178,7 @@
 </div>
 
 <div class="page-hero" id="main-content">
-  <img class="page-hero-img" src="assets/lavoro-15.webp" alt="Cucina su misura ristrutturata da Sitom Edilizia" fetchpriority="high"/>
+  <img class="page-hero-img" src="assets/lavoro-25.webp" alt="Facciata esterna di una villa ristrutturata da Sitom Edilizia" fetchpriority="high"/>
   <div class="page-hero-bg"></div>
   <div class="page-hero-inner">
     <p class="section-tag">Chi Siamo</p>

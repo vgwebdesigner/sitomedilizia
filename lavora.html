@@ -52,10 +52,10 @@
     .section-tag{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);font-weight:500;margin-bottom:1rem}
     .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:700;line-height:1.1;color:var(--black);margin-bottom:1.25rem}
 
-    .page-hero{margin-top:72px;padding:7rem 6vw 5rem;background:var(--black);position:relative;overflow:hidden}
+    .page-hero{min-height:100vh;margin-top:72px;display:flex;align-items:center;background:var(--black);position:relative;overflow:hidden}
     .page-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85}
     .page-hero-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,15,15,.55) 0%,rgba(15,15,15,.8) 100%);z-index:1}
-    .page-hero-inner{position:relative;z-index:2;max-width:780px}
+    .page-hero-inner{position:relative;z-index:2;max-width:780px;padding:0 6vw}
     .page-hero .section-tag{color:var(--green)}
     .page-hero .section-title{color:#fff}
     .page-hero p{color:rgba(255,255,255,0.8);font-size:1rem;line-height:1.85;max-width:560px}
@@ -140,7 +140,7 @@
       .footer-top{grid-template-columns:1fr;gap:2rem}
       .cta-strip{flex-direction:column;align-items:flex-start}
     }
-    @media(max-width:580px){section{padding:4rem 5vw}.processo-grid{grid-template-columns:1fr}}
+    @media(max-width:580px){section{padding:4rem 5vw}.processo-grid{grid-template-columns:1fr}.page-hero{min-height:calc(100vh - 72px)}.page-hero-inner{padding:0 5vw}}
   </style>
   <link rel="stylesheet" href="assets/css/cookie-consent.css"/><link rel="stylesheet" href="assets/site-enhancements.css"/>
 </head>
