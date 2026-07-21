@@ -121,9 +121,8 @@
       background:rgba(255,255,255,.08);backdrop-filter:blur(14px);
       color:#fff;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
     }
-    .hero-brand-mark strong {
-      display:grid;place-items:center;width:38px;height:38px;background:#fff;color:var(--green-dark);
-      font-family:'Cormorant Garamond',serif;font-size:1.15rem;letter-spacing:0;
+    .hero-brand-mark img {
+      display:block;height:34px;width:auto;background:#fff;padding:2px;
     }
     .hero-note { color:rgba(255,255,255,.62);font-size:.78rem;line-height:1.5;max-width:220px; }
     .btn {
@@ -374,7 +373,7 @@
 <section class="hero">
   <img class="hero-img" src="assets/lavoro-13.webp" alt="Soggiorno completamente ristrutturato da Sitom Edilizia" fetchpriority="high"/><div class="hero-bg"></div>
   <div class="hero-content">
-    <div class="hero-brand-mark"><strong>S</strong><span>Sitom Edilizia Srl</span></div>
+    <div class="hero-brand-mark"><img src="assets/logo-sitom.webp" alt="Sitom Edilizia"/><span>Sitom Edilizia Srl</span></div>
     <div class="hero-eyebrow">Roma &amp; Provincia · Dal 2013</div>
     <h1 class="hero-title">
       Il cantiere fatto bene,<br/>con la firma <em>Sitom</em>.
@@ -583,7 +582,7 @@
   document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
 </script>
 <button class="wa-assistant-trigger" type="button" data-wa-assistant-open aria-label="Apri guida WhatsApp per il sopralluogo">
-  <span class="wa-assistant-icon" aria-hidden="true">S</span><span class="wa-assistant-label">Parla con Sitom</span>
+  <span class="wa-assistant-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h3v-5h6v5h3a1 1 0 0 0 1-1v-9"/></svg></span><span class="wa-assistant-label">Parla con Sitom</span>
 </button>
 <script src="assets/js/cookie-consent.js"></script>
 <!-- GA4: sostituire G-XXXXXXXXXX con il Measurement ID reale del cliente prima di attivare -->
