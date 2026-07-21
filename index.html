@@ -1,0 +1,593 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sitom Edilizia Srl – Roma | Ristrutturazioni e Impiantistica</title>
+  <meta name="description" content="Sitom Edilizia Srl realizza ristrutturazioni complete, impianti, cartongesso, tinteggiature e finiture a Roma e provincia. Preventivo gratuito entro 24 ore."/>
+    <meta name="robots" content="index,follow"/>
+  <link rel="canonical" href="https://www.sitomedilizia.it/"/>
+  <meta name="theme-color" content="#1a7a38"/>
+  <meta property="og:locale" content="it_IT"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Sitom Edilizia Srl – Roma | Ristrutturazioni e Impiantistica"/>
+  <meta property="og:description" content="Sitom Edilizia Srl realizza ristrutturazioni complete, impianti, cartongesso, tinteggiature e finiture a Roma e provincia. Preventivo gratuito entro 24 ore."/>
+  <meta property="og:url" content="https://www.sitomedilizia.it/"/>
+  <meta property="og:site_name" content="Sitom Edilizia Srl"/>
+  <meta property="og:image" content="https://www.sitomedilizia.it/assets/lavoro-13.webp"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Sitom Edilizia Srl – Roma | Ristrutturazioni e Impiantistica"/>
+  <meta name="twitter:description" content="Sitom Edilizia Srl realizza ristrutturazioni complete, impianti, cartongesso, tinteggiature e finiture a Roma e provincia. Preventivo gratuito entro 24 ore."/>
+  <meta name="twitter:image" content="https://www.sitomedilizia.it/assets/lavoro-13.webp"/>
+  <link rel="icon" type="image/png" href="assets/favicon.png"/>
+  <link rel="apple-touch-icon" href="assets/icon-192.png"/>
+  <link rel="manifest" href="site.webmanifest"/>
+  <link rel="preload" as="image" href="assets/lavoro-13.webp" fetchpriority="high"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --green: #1a7a38;
+      --green-light: #219a47;
+      --green-dark: #125429;
+      --red: #b83232;
+      --black: #0f0f0f;
+      --text: #2a2a2a;
+      --gray: #6b6b6b;
+      --line: #e4e4e0;
+      --bg: #fafaf8;
+      --white: #ffffff;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.97); border-bottom: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6vw; height: 72px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color:var(--black); }
+    .nav-logo img { height: 64px; width:auto; display:block; }
+    .nav-mark {
+      display:grid;place-items:center;width:36px;height:36px;background:var(--green);color:#fff;
+      font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.1rem;
+    }
+    .nav-wordmark { display:flex;flex-direction:column;line-height:1.05; }
+    .nav-wordmark strong { font-size:.9rem;letter-spacing:.12em;text-transform:uppercase; }
+    .nav-wordmark span { color:var(--green);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;margin-top:3px; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+    .nav-links a {
+      text-decoration: none; color: var(--text); font-size: 0.88rem;
+      font-weight: 400; letter-spacing: 0.04em; transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--green); }
+    .nav-links .cta {
+      background: var(--green); color: #fff !important;
+      padding: 9px 22px; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.06em;
+    }
+    .nav-links .cta:hover { background: var(--green-dark); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+    .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--text); }
+    .mobile-menu {
+      display: none; position: fixed; top: 72px; left: 0; right: 0;
+      background: #fff; border-bottom: 1px solid var(--line);
+      padding: 1.5rem 6vw; z-index: 99; flex-direction: column; gap: 1.25rem;
+    }
+    .mobile-menu a { text-decoration: none; color: var(--text); font-size: 1rem; }
+    .mobile-menu.open { display: flex; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; margin-top: 72px;
+      display: flex; align-items: center;
+      background: var(--black); position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.68) 34%, rgba(0,0,0,0.18) 100%);
+      z-index: 1;
+    }
+    .hero-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; opacity: 0.78;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 0 6vw; max-width: 720px;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--green-light); font-weight: 500; margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--green-light); }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 700; color: #fff; line-height: 1.08;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title em { font-style: italic; color: #d4e8d6; }
+    .hero-sub { font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 2.5rem; max-width: 480px; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items:center; }
+    .hero-brand-mark {
+      display:inline-flex;align-items:center;gap:.75rem;margin-bottom:1rem;
+      padding:.55rem .75rem .55rem .6rem;border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.08);backdrop-filter:blur(14px);
+      color:#fff;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+    }
+    .hero-brand-mark strong {
+      display:grid;place-items:center;width:38px;height:38px;background:#fff;color:var(--green-dark);
+      font-family:'Cormorant Garamond',serif;font-size:1.15rem;letter-spacing:0;
+    }
+    .hero-note { color:rgba(255,255,255,.62);font-size:.78rem;line-height:1.5;max-width:220px; }
+    .btn {
+      display: inline-block; text-decoration: none;
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em;
+      padding: 13px 28px; transition: all 0.2s;
+    }
+    .btn-white { background: #fff; color: var(--black); }
+    .btn-white:hover { background: var(--bg); }
+    .btn-ghost { border: 1px solid rgba(255,255,255,0.35); color: #fff; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.6); }
+    .btn-green { background: var(--green); color: #fff; }
+    .btn-green:hover { background: var(--green-dark); }
+    .btn-outline-green { border: 1px solid var(--green); color: var(--green); }
+    .btn-outline-green:hover { background: var(--green); color: #fff; }
+
+    /* FIDUCIA */
+    .trust-panel {
+      position:relative;z-index:3;margin:-44px 6vw 0;background:#fff;
+      display:grid;grid-template-columns:repeat(6,1fr);border:1px solid var(--line);
+      box-shadow:0 24px 70px rgba(15,15,15,.12);
+    }
+    .trust-item { padding:1.25rem 1.15rem;border-right:1px solid var(--line); }
+    .trust-item:last-child { border-right:0; }
+    .trust-kicker { display:block;color:var(--green);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.35rem;font-weight:700; }
+    .trust-value { display:block;color:var(--black);font-size:1.05rem;font-weight:700;line-height:1.25; }
+    .trust-note { display:block;color:var(--gray);font-size:.72rem;line-height:1.45;margin-top:.25rem; }
+
+    /* TICKER */
+    .ticker {
+      background: var(--green); overflow: hidden; padding: 0; height: 42px;
+      display: flex; align-items: center;
+    }
+    .ticker-track {
+      display: flex; gap: 0; white-space: nowrap;
+      animation: ticker 30s linear infinite;
+    }
+    .ticker-item {
+      font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(255,255,255,0.85); padding: 0 2.5rem; font-weight: 500;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .ticker-item::after { content: '·'; color: rgba(255,255,255,0.4); }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* SECTIONS */
+    section { padding: 6rem 6vw; }
+    .section-tag {
+      font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--green); font-weight: 500; margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 700;
+      line-height: 1.1; color: var(--black); margin-bottom: 1.25rem;
+    }
+    .section-sub { font-size: 0.95rem; color: var(--gray); line-height: 1.8; max-width: 540px; }
+
+    /* HOME — ABOUT STRIP */
+    .about-strip {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
+      background: var(--bg);
+    }
+    .about-strip .section-sub { max-width: 100%; }
+    .about-strip p { font-size: 0.95rem; color: var(--gray); line-height: 1.85; margin-bottom: 1rem; }
+    .about-strip blockquote {
+      border-left: 2px solid var(--green); padding-left: 1.25rem;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.25rem;
+      color: var(--green-dark); font-style: italic; margin: 1.75rem 0;
+      line-height: 1.5;
+    }
+    .about-proof {
+      display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin:1.5rem 0 1.8rem;
+      background:var(--line);border:1px solid var(--line);
+    }
+    .about-proof-item { background:#fff;padding:1rem; }
+    .about-proof-item strong { display:block;color:var(--black);font-size:.82rem;margin-bottom:.35rem; }
+    .about-proof-item span { display:block;color:var(--gray);font-size:.74rem;line-height:1.55; }
+    .about-visual { position: relative; }
+    .about-photo-placeholder {
+      width: 100%; aspect-ratio: 4/5; background: #ddd;
+      display: flex; align-items: center; justify-content: center;
+      color: #999; font-size: 0.85rem; text-align: center; line-height: 1.6;
+      position: relative; overflow: hidden;
+    }
+    .about-badge {
+      position: absolute; bottom: -1.5rem; right: -1.5rem;
+      background: var(--green); color: #fff;
+      width: 110px; height: 110px; border-radius: 50%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-size: 0.7rem; text-align: center; line-height: 1.4; letter-spacing: 0.05em;
+    }
+    .about-badge strong { font-size: 1.6rem; font-weight: 700; display: block; }
+
+    .section-bridge {
+      padding:0 6vw;background:linear-gradient(180deg,var(--bg) 0%,#edf4ef 48%,var(--white) 100%);
+    }
+    .section-bridge-inner {
+      max-width:1280px;margin:auto;padding:2rem 0 3.25rem;
+      display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;
+      border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    }
+    .section-bridge p { color:var(--gray);font-size:.86rem;line-height:1.65;max-width:620px; }
+    .section-bridge strong {
+      color:var(--black);font-family:'Cormorant Garamond',serif;font-size:1.55rem;line-height:1.15;
+    }
+    .bridge-line { width:160px;height:1px;background:var(--green);opacity:.5; }
+
+    /* SERVIZI GRID MINI (homepage) */
+    .servizi-mini { background: #eef6f1; }
+    .servizi-mini .section-title { color: var(--green-dark); }
+    .servizi-mini-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+      background: rgba(26,122,56,0.18); margin-top: 3rem;
+      border: 1px solid rgba(26,122,56,0.16);
+    }
+    .serv-mini-card {
+      background: #fff; padding: 2rem 1.5rem;
+      transition: background 0.2s, transform .2s, box-shadow .2s;
+    }
+    .serv-mini-card:hover { background: var(--bg); transform:translateY(-4px); box-shadow:0 18px 40px rgba(15,15,15,.08); }
+    .serv-mini-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+    .serv-mini-card h3 { font-size: 0.9rem; font-weight: 500; margin-bottom: 0.5rem; }
+    .serv-mini-card p { font-size: 0.8rem; color: var(--gray); line-height: 1.6; }
+
+    /* CTA STRIP */
+    .cta-strip {
+      background: var(--green); padding: 4rem 6vw;
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+    }
+    .cta-strip h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem); color: #fff; font-weight: 700;
+    }
+    .cta-strip p { color: rgba(255,255,255,0.75); font-size: 0.9rem; margin-top: 0.4rem; }
+
+    /* FOOTER */
+    footer { background: #0f0f0f; color: rgba(255,255,255,0.5); padding: 4rem 6vw 2.5rem; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .footer-logo { height:90px; width:auto; background:#fff; padding:8px; opacity:1; margin-bottom:1.25rem; }
+    .footer-brand { display:flex;align-items:center;gap:12px;margin-bottom:1.25rem;color:#fff; }
+    .footer-brand .nav-mark { background:#fff;color:var(--green-dark); }
+    .footer-brand .nav-wordmark strong { color:#fff; }
+    .footer-brand .nav-wordmark span { color:rgba(255,255,255,.45); }
+    .footer-about p { font-size: 0.85rem; line-height: 1.8; max-width: 280px; }
+    .footer-slogan { font-family: 'Cormorant Garamond', serif; font-style: italic; color: rgba(255,255,255,0.25); font-size: 0.95rem; margin-top: 1rem; }
+    .footer-col h5 { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 1.25rem; font-weight: 500; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.65rem; }
+    .footer-col ul li a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--green-light); }
+    .footer-bottom { padding-top: 2rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; font-size: 0.78rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .about-strip { grid-template-columns: 1fr; gap: 3rem; }
+      .about-proof { grid-template-columns:1fr; }
+      .section-bridge-inner { grid-template-columns:1fr;gap:1rem; }
+      .bridge-line { width:100%; }
+      .servizi-mini-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-panel { grid-template-columns:repeat(2,1fr);margin-top:0; }
+      .trust-item { border-bottom:1px solid var(--line); }
+      .trust-item:nth-child(2n) { border-right:0; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .cta-strip { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 580px) {
+      section { padding: 4rem 5vw; }
+      .section-bridge { padding:0 5vw; }
+      .servizi-mini-grid { grid-template-columns: 1fr; }
+      .hero { min-height: calc(100vh - 72px); }
+      .hero-content { padding: 0 5vw; }
+      .hero-note { width:100%;max-width:none; }
+      .trust-panel { grid-template-columns:1fr;margin:0;border-left:0;border-right:0;box-shadow:none; }
+      .trust-item { border-right:0; }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/cookie-consent.css"/><link rel="stylesheet" href="assets/site-enhancements.css"/>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "LocalBusiness",
+    "ConstructionCompany"
+  ],
+  "@id": "https://www.sitomedilizia.it/#sitom-edilizia",
+  "name": "Sitom Edilizia Srl",
+  "url": "https://www.sitomedilizia.it/",
+  "logo": "https://www.sitomedilizia.it/assets/logo-sitom.webp",
+  "image": "https://www.sitomedilizia.it/assets/lavoro-13.webp",
+  "telephone": "+39 347 593 0035",
+  "email": "sitomedilizia@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Piazzale delle Provincie 8",
+    "postalCode": "00162",
+    "addressLocality": "Roma",
+    "addressRegion": "RM",
+    "addressCountry": "IT"
+  },
+  "areaServed": [
+    "Roma",
+    "Provincia di Roma",
+    "Lazio"
+  ],
+  "foundingDate": "2013",
+  "priceRange": "€€",
+  "description": "Impresa edile specializzata in ristrutturazioni complete, impiantistica, cartongesso, tinteggiature, pavimentazioni e murature a Roma e provincia.",
+  "sameAs": [
+    "https://msha.ke/vgwebdesigner/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+39 347 593 0035",
+    "contactType": "customer service",
+    "areaServed": "IT",
+    "availableLanguage": "it"
+  }
+}
+  </script>
+</head>
+<body>
+
+<nav>
+  <a class='nav-logo' href='index.html'>
+    <img src="assets/logo-sitom.webp" alt="Sitom Edilizia"/>
+  </a>
+  <ul class="nav-links">
+    <li><a class='active' href='index.html'>Home</a></li>
+    <li><a href='chi-siamo.html'>Chi Siamo</a></li>
+    <li><a href='servizi.html'>Servizi</a></li>
+    <li><a href='lavora.html'>Lavora con Noi</a></li>
+    <li><a class='cta' href='contatti.html'>Contatti</a></li>
+  </ul>
+  <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href='index.html'>Home</a>
+  <a href='chi-siamo.html'>Chi Siamo</a>
+  <a href='servizi.html'>Servizi</a>
+  <a href='lavora.html'>Lavora con Noi</a>
+  <a href='contatti.html'>Contatti</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-img" src="assets/lavoro-13.webp" alt="Soggiorno completamente ristrutturato da Sitom Edilizia" fetchpriority="high"/><div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-brand-mark"><strong>S</strong><span>Sitom Edilizia Srl</span></div>
+    <div class="hero-eyebrow">Roma &amp; Provincia · Dal 2013</div>
+    <h1 class="hero-title">
+      Il cantiere fatto bene,<br/>con la firma <em>Sitom</em>.
+    </h1>
+    <p class="hero-sub">
+      Ristrutturazioni, impianti e finiture seguiti da artigiani veri. Precisione di cantiere,
+      comunicazione chiara e preventivo gratuito entro 24 ore.
+    </p>
+    <div class="hero-actions">
+      <a class='btn btn-white' href='contatti.html'>Preventivo entro 24 ore</a>
+      <button class="btn btn-ghost" type="button" data-wa-assistant-open>Scrivi su WhatsApp</button>
+      <span class="hero-note">Risposta diretta da Sitom, senza passaggi inutili.</span>
+    </div>
+  </div>
+</section>
+
+<div class="trust-panel" aria-label="Elementi di fiducia Sitom Edilizia">
+  <div class="trust-item"><span class="trust-kicker">10+</span><span class="trust-value">Anni di esperienza</span></div>
+  <div class="trust-item"><span class="trust-kicker">Dal 2013</span><span class="trust-value">Operativi a Roma</span></div>
+  <div class="trust-item"><span class="trust-kicker">Lavori</span><span class="trust-value">Cantieri documentati</span></div>
+  <div class="trust-item"><span class="trust-kicker">Chiavi in mano</span><span class="trust-value">Gestione completa</span></div>
+  <div class="trust-item"><span class="trust-kicker">Materiali</span><span class="trust-value">Soluzioni certificate</span></div>
+  <div class="trust-item"><span class="trust-kicker">Preventivo</span><span class="trust-value">Gratuito</span></div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Ristrutturazione Edilizia</span>
+    <span class="ticker-item">Impiantistica Idraulica</span>
+    <span class="ticker-item">Impiantistica Termica</span>
+    <span class="ticker-item">Impiantistica Elettrica</span>
+    <span class="ticker-item">Opere in Cartongesso</span>
+    <span class="ticker-item">Tinteggiature</span>
+    <span class="ticker-item">Pavimentazioni</span>
+    <span class="ticker-item">Murature</span>
+    <span class="ticker-item">Roma e Provincia</span>
+    <span class="ticker-item">Ristrutturazione Edilizia</span>
+    <span class="ticker-item">Impiantistica Idraulica</span>
+    <span class="ticker-item">Impiantistica Termica</span>
+    <span class="ticker-item">Impiantistica Elettrica</span>
+    <span class="ticker-item">Opere in Cartongesso</span>
+    <span class="ticker-item">Tinteggiature</span>
+    <span class="ticker-item">Pavimentazioni</span>
+    <span class="ticker-item">Murature</span>
+    <span class="ticker-item">Roma e Provincia</span>
+  </div>
+</div>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div>
+    <p class="section-tag">Chi Siamo</p>
+    <h2 class="section-title">Veri artigiani,<br/>vera qualità.</h2>
+    <p>Sitom Edilizia Srl nasce dall'esperienza di Alessandro Sollecchia, geometra e muratore, che dal 2013 ha trasformato la sua passione in un'impresa solida e riconosciuta a Roma.</p>
+    <p>La nostra forza è la collaborazione con artigiani di vecchia scuola — maestri del mestiere che ci trasmettono cura, precisione e amore per il lavoro ben fatto.</p>
+    <p>Ogni intervento viene seguito con un approccio concreto: ascolto iniziale, valutazione tecnica, scelta dei materiali, coordinamento delle lavorazioni e controllo delle finiture. Così il cliente ha un unico riferimento e un cantiere più ordinato.</p>
+    <div class="about-proof" aria-label="Metodo di lavoro Sitom">
+      <div class="about-proof-item"><strong>Sopralluogo chiaro</strong><span>Capire spazi, priorità e criticità prima di parlare di soluzioni.</span></div>
+      <div class="about-proof-item"><strong>Artigiani coordinati</strong><span>Muratori, impiantisti e finitori lavorano con una regia unica.</span></div>
+      <div class="about-proof-item"><strong>Finiture controllate</strong><span>Attenzione ai dettagli perché il lavoro finito deve parlare da solo.</span></div>
+    </div>
+    <blockquote>"In tutti questi anni la mia pubblicità è stata il passaparola. La qualità si vede, non si racconta."</blockquote>
+    <a class='btn btn-outline-green' href='chi-siamo.html' style='margin-top:0.5rem'>Scopri la nostra storia</a>
+  </div>
+  <div class="about-visual">
+    <img class="about-photo-placeholder content-photo" src="assets/lavoro-11.webp" alt="Realizzazione di nuove pareti interne durante il cantiere" loading="lazy" decoding="async"/>
+    <div class="about-badge"><strong>10+</strong>anni di<br/>esperienza</div>
+  </div>
+</section>
+
+<div class="section-bridge">
+  <div class="section-bridge-inner">
+    <div>
+      <strong>Dalla storia al cantiere.</strong>
+      <p>La differenza Sitom si vede nel modo in cui ogni servizio viene gestito: meno improvvisazione, più controllo, più qualità in consegna.</p>
+    </div>
+    <span class="bridge-line"></span>
+  </div>
+</div>
+
+<!-- SERVIZI MINI -->
+<section class="servizi-mini">
+  <p class="section-tag">Servizi</p>
+  <h2 class="section-title">Tutto per la tua casa.</h2>
+  <div class="servizi-mini-grid">
+    <div class="serv-mini-card">
+      <div class="serv-mini-icon">🏗️</div>
+      <h3>Ristrutturazione</h3>
+      <p>Completa, chiavi in mano. Dal progetto alla consegna.</p>
+    </div>
+    <div class="serv-mini-card">
+      <div class="serv-mini-icon">🔧</div>
+      <h3>Impiantistica</h3>
+      <p>Idraulica, termica ed elettrica. A norma di legge.</p>
+    </div>
+    <div class="serv-mini-card">
+      <div class="serv-mini-icon">🧱</div>
+      <h3>Cartongesso</h3>
+      <p>Controsoffitti, pareti e rivestimenti su misura.</p>
+    </div>
+    <div class="serv-mini-card">
+      <div class="serv-mini-icon">🎨</div>
+      <h3>Tinteggiature</h3>
+      <p>Interne ed esterne, con finiture di qualità.</p>
+    </div>
+    <div class="serv-mini-card">
+      <div class="serv-mini-icon">🏠</div>
+      <h3>Pavimentazioni</h3>
+      <p>Ceramica, gres, parquet e materiali lapidei.</p>
+    </div>
+    <div class="serv-mini-card">
+      <div class="serv-mini-icon">⬛</div>
+      <h3>Murature</h3>
+      <p>Costruzione, demolizione e consolidamento strutturale.</p>
+    </div>
+    <div class="serv-mini-card" style="grid-column: span 2; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+      <div>
+        <h3 style="font-size:1rem; margin-bottom:0.25rem;">Privati e Aziende</h3>
+        <p style="font-size:0.85rem;">Lavoriamo su Roma, provincia, Lazio e resto d'Italia.</p>
+      </div>
+      <a class='btn btn-green' href='servizi.html' style='white-space:nowrap'>Tutti i Servizi →</a>
+    </div>
+  </div>
+  <div class="mid-cta">
+    <div>
+      <strong>Vuoi capire subito tempi e costi?</strong>
+      <span>Raccontaci il lavoro: ti rispondiamo con un primo orientamento entro 24 ore.</span>
+    </div>
+    <button type="button" data-wa-assistant-open>Scrivi su WhatsApp</button>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="work-gallery" id="lavori">
+  <div class="work-gallery-head"><div><p class="section-tag">Lavori Realizzati</p><h2 class="section-title">Esperienza che si vede.</h2></div><p>Una selezione autentica di ristrutturazioni, finiture, bagni, interni e opere in legno realizzate sul campo.</p></div>
+  <div class="work-grid">
+    <figure class="work-card"><button class="work-open" type="button" aria-label="Ingrandisci: Rivestimento bagno in gres"><img src="assets/lavoro-01.webp" alt="Rivestimento bagno in gres" loading="lazy" decoding="async" width="1200" height="900"/></button><figcaption>Rivestimento bagno in gres</figcaption></figure>
+    <figure class="work-card"><button class="work-open" type="button" aria-label="Ingrandisci: Ristrutturazione bagno in corso"><img src="assets/lavoro-02.webp" alt="Ristrutturazione bagno in corso" loading="lazy" decoding="async" width="1200" height="900"/></button><figcaption>Ristrutturazione bagno in corso</figcaption></figure>
+    <figure class="work-card"><button class="work-open" type="button" aria-label="Ingrandisci: Bagno ristrutturato con doccia"><img src="assets/lavoro-03.webp" alt="Bagno ristrutturato con doccia" loading="lazy" decoding="async" width="1200" height="900"/></button><figcaption>Bagno ristrutturato con doccia</figcaption></figure>
+    <figure class="work-card"><button class="work-open" type="button" aria-label="Ingrandisci: Posa di pavimenti e rivestimenti"><img src="assets/lavoro-04.webp" alt="Posa di pavimenti e rivestimenti" loading="lazy" decoding="async" width="1200" height="900"/></button><figcaption>Posa di pavimenti e rivestimenti</figcaption></figure>
+    <figure class="work-card"><button class="work-open" type="button" aria-label="Ingrandisci: Intervento esterno in giardino"><img src="assets/lavoro-05.webp" alt="Intervento esterno in giardino" loading="lazy" decoding="async" width="1200" height="900"/></button><figcaption>Intervento esterno in giardino</figcaption></figure>
+    <figure class="work-card"><button class="work-open" type="button" aria-label="Ingrandisci: Impianti e rivestimenti bagno"><img src="assets/lavoro-06.webp" alt="Impianti e rivestimenti bagno" loading="lazy" decoding="async" width="1200" height="900"/></button><figcaption>Impianti e rivestimenti bagno</figcaption></figure>
+    <figure class="work-card"><button class="work-open" type="button" aria-label="Ingrandisci: Posa pavimento in ambiente commerciale"><img src="assets/lavoro-07.webp" alt="Posa pavimento in ambiente commerciale" loading="lazy" decoding="async" width="1200" height="900"/></button><figcaption>Posa pavimento in ambiente commerciale</figcaption></figure>
+    <figure class="work-card"><button class="work-open" type="button" aria-label="Ingrandisci: Locale commerciale ristrutturato"><img src="assets/lavoro-08.webp" alt="Locale commerciale ristrutturato" loading="lazy" decoding="async" width="1200" height="900"/></button><figcaption>Locale commerciale ristrutturato</figcaption></figure>
+    <figure class="work-card"><button class="work-open" type="button" aria-label="Ingrandisci: Copertura in legno"><img src="assets/lavoro-09.webp" alt="Copertura in legno" loading="lazy" decoding="async" width="1200" height="900"/></button><figcaption>Copertura in legno</figcaption></figure>
+    <figure class="work-card"><button class="work-open" type="button" aria-label="Ingrandisci: Rifacimento esterno abitazione"><img src="assets/lavoro-10.webp" alt="Rifacimento esterno abitazione" loading="lazy" decoding="async" width="1200" height="900"/></button><figcaption>Rifacimento esterno abitazione</figcaption></figure>
+    <figure class="work-card"><button class="work-open" type="button" aria-label="Ingrandisci: Realizzazione pareti interne"><img src="assets/lavoro-11.webp" alt="Realizzazione pareti interne" loading="lazy" decoding="async" width="1200" height="900"/></button><figcaption>Realizzazione pareti interne</figcaption></figure>
+    <figure class="work-card"><button class="work-open" type="button" aria-label="Ingrandisci: Ambiente mansardato ristrutturato"><img src="assets/lavoro-12.webp" alt="Ambiente mansardato ristrutturato" loading="lazy" decoding="async" width="1200" height="900"/></button><figcaption>Ambiente mansardato ristrutturato</figcaption></figure>
+    <figure class="work-card"><button class="work-open" type="button" aria-label="Ingrandisci: Soggiorno ristrutturato"><img src="assets/lavoro-13.webp" alt="Soggiorno ristrutturato" loading="lazy" decoding="async" width="1200" height="900"/></button><figcaption>Soggiorno ristrutturato</figcaption></figure>
+    <figure class="work-card"><button class="work-open" type="button" aria-label="Ingrandisci: Bagno completo con vasca"><img src="assets/lavoro-14.webp" alt="Bagno completo con vasca" loading="lazy" decoding="async" width="1200" height="900"/></button><figcaption>Bagno completo con vasca</figcaption></figure>
+    <figure class="work-card"><button class="work-open" type="button" aria-label="Ingrandisci: Cucina su misura ristrutturata"><img src="assets/lavoro-15.webp" alt="Cucina su misura ristrutturata" loading="lazy" decoding="async" width="1200" height="900"/></button><figcaption>Cucina su misura ristrutturata</figcaption></figure>
+    <figure class="work-card"><button class="work-open" type="button" aria-label="Ingrandisci: Bagno con doccia walk-in"><img src="assets/lavoro-16.webp" alt="Bagno con doccia walk-in" loading="lazy" decoding="async" width="1200" height="900"/></button><figcaption>Bagno con doccia walk-in</figcaption></figure>
+    <figure class="work-card"><button class="work-open" type="button" aria-label="Ingrandisci: Posa pavimento e preparazione bagno"><img src="assets/lavoro-17.webp" alt="Posa pavimento e preparazione bagno durante il cantiere" loading="lazy" decoding="async" width="1200" height="1600"/></button><figcaption>Posa pavimento e preparazione bagno</figcaption></figure>
+  </div>
+</section>
+<dialog class="work-lightbox" id="workLightbox"><button type="button" class="lightbox-close" aria-label="Chiudi immagine">×</button><img alt=""/></dialog>
+<div class="cta-strip">
+  <div>
+    <h2>Hai un progetto in mente?</h2>
+    <p>Contattaci per un sopralluogo e un preventivo gratuito, senza impegno.</p>
+  </div>
+  <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+    <a href="https://wa.me/393475930035" target="_blank" class="btn" style="background:#25D366; color:#fff;">💬 WhatsApp</a>
+    <a class='btn' href='contatti.html' style='background:#fff; color:var(--green);'>Richiedi Preventivo</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-about">
+      <img src="assets/logo-sitom.webp" alt="Sitom Edilizia" class="footer-logo"/>
+      <p>Sitom Edilizia Srl – Piazzale delle Provincie, 8 – 00162 Roma<br/>P.I./C.F. 17213611001</p>
+      <p class="footer-slogan">"La tua casa, la nostra missione."</p>
+    </div>
+    <div class="footer-col">
+      <h5>Pagine</h5>
+      <ul>
+        <li><a href='index.html'>Home</a></li>
+        <li><a href='chi-siamo.html'>Chi Siamo</a></li>
+        <li><a href='servizi.html'>Servizi</a></li>
+        <li><a href='lavora.html'>Lavora con Noi</a></li>
+        <li><a href='contatti.html'>Contatti</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contatti</h5>
+      <ul>
+        <li><a href="tel:+393475930035">+39 347 593 0035</a></li>
+        <li><a href="mailto:sitomedilizia@gmail.com">sitomedilizia@gmail.com</a></li>
+        <li><a href="https://wa.me/393475930035" target="_blank">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Sitom Edilizia Srl – Tutti i diritti riservati</span><span>Realizzato con amore da <a href="https://msha.ke/vgwebdesigner/" target="_blank" rel="noopener">vgwebdesigner</a></span>
+    <span><a href="privacy-cookie.html">Privacy &amp; Cookie Policy</a></span>
+  <span><button type="button" class="cc-footer-link" data-cookie-consent-open>Rivedi le tue scelte sui cookie</button></span></div>
+</footer>
+
+<script>
+  const ham = document.getElementById('ham');
+  const mob = document.getElementById('mobileMenu');
+  ham.addEventListener('click', () => mob.classList.toggle('open'));
+  document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+</script>
+<button class="wa-assistant-trigger" type="button" data-wa-assistant-open aria-label="Apri guida WhatsApp per il sopralluogo">
+  <span class="wa-assistant-icon" aria-hidden="true">S</span><span class="wa-assistant-label">Parla con Sitom</span>
+</button>
+<script src="assets/js/cookie-consent.js"></script>
+<!-- GA4: sostituire G-XXXXXXXXXX con il Measurement ID reale del cliente prima di attivare -->
+<script type="text/plain" data-cookie-category="analytics" data-src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script type="text/plain" data-cookie-category="analytics">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script><script src="assets/site-enhancements.js" defer></script>
+</body>
+</html>

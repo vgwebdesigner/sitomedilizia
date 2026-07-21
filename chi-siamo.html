@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chi Siamo – Sitom Edilizia Srl Roma</title>
+  <meta name="description" content="Sitom Edilizia Srl: artigiani edili a Roma dal 2013, specializzati in ristrutturazioni, finiture e gestione completa del cantiere."/>
+    <meta name="robots" content="index,follow"/>
+  <link rel="canonical" href="https://www.sitomedilizia.it/chi-siamo.html"/>
+  <meta name="theme-color" content="#1a7a38"/>
+  <meta property="og:locale" content="it_IT"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="Chi Siamo – Sitom Edilizia Srl Roma"/>
+  <meta property="og:description" content="Sitom Edilizia Srl: artigiani edili a Roma dal 2013, specializzati in ristrutturazioni, finiture e gestione completa del cantiere."/>
+  <meta property="og:url" content="https://www.sitomedilizia.it/chi-siamo.html"/>
+  <meta property="og:site_name" content="Sitom Edilizia Srl"/>
+  <meta property="og:image" content="https://www.sitomedilizia.it/assets/lavoro-12.webp"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Chi Siamo – Sitom Edilizia Srl Roma"/>
+  <meta name="twitter:description" content="Sitom Edilizia Srl: artigiani edili a Roma dal 2013, specializzati in ristrutturazioni, finiture e gestione completa del cantiere."/>
+  <meta name="twitter:image" content="https://www.sitomedilizia.it/assets/lavoro-12.webp"/>
+  <link rel="icon" type="image/png" href="assets/favicon.png"/>
+  <link rel="apple-touch-icon" href="assets/icon-192.png"/>
+  <link rel="manifest" href="site.webmanifest"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --green:#1a7a38;--green-light:#219a47;--green-dark:#125429;--black:#0f0f0f;--text:#2a2a2a;--gray:#6b6b6b;--line:#e4e4e0;--bg:#fafaf8;--white:#ffffff; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 6vw;height:72px}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .nav-logo img{height:64px;width:auto;display:block}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
+    .nav-links a{text-decoration:none;color:var(--text);font-size:0.88rem;font-weight:400;letter-spacing:0.04em;transition:color 0.2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--green)}
+    .nav-links .cta{background:var(--green);color:#fff!important;padding:9px 22px;font-weight:500;font-size:0.85rem;letter-spacing:0.06em}
+    .nav-links .cta:hover{background:var(--green-dark)}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}
+    .hamburger span{display:block;width:24px;height:1.5px;background:var(--text)}
+    .mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:1.5rem 6vw;z-index:99;flex-direction:column;gap:1.25rem}
+    .mobile-menu a{text-decoration:none;color:var(--text);font-size:1rem}
+    .mobile-menu.open{display:flex}
+    section{padding:6rem 6vw}
+    .section-tag{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);font-weight:500;margin-bottom:1rem}
+    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:700;line-height:1.1;color:var(--black);margin-bottom:1.25rem}
+    .btn{display:inline-block;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.06em;padding:13px 28px;transition:all 0.2s}
+    .btn-green{background:var(--green);color:#fff}
+    .btn-green:hover{background:var(--green-dark)}
+    .btn-outline-green{border:1px solid var(--green);color:var(--green)}
+    .btn-outline-green:hover{background:var(--green);color:#fff}
+
+    /* PAGE HERO */
+    .page-hero{
+      margin-top:72px; padding:5rem 6vw 4rem;
+      background:var(--bg); border-bottom:1px solid var(--line);
+    }
+    .page-hero-inner{max-width:700px}
+    .page-hero .section-title{margin-bottom:1rem}
+    .page-hero p{font-size:1.05rem;color:var(--gray);line-height:1.85}
+
+    /* STORIA */
+    .storia{background:var(--white)}
+    .storia-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+    .storia-text p{font-size:0.95rem;color:var(--gray);line-height:1.85;margin-bottom:1.25rem}
+    .storia-text blockquote{
+      border-left:2px solid var(--green);padding-left:1.25rem;
+      font-family:'Cormorant Garamond',serif;font-size:1.3rem;
+      color:var(--green-dark);font-style:italic;margin:2rem 0;line-height:1.5
+    }
+    .storia-visual{position:relative;padding-top:1rem;display:grid;grid-template-columns:minmax(210px,.82fr) 1fr;gap:1.5rem;align-items:start}
+    .storia-visual .timeline{grid-column:1;grid-row:1;margin-top:0!important;padding-top:.25rem}
+    .storia-visual .content-photo{grid-column:2;grid-row:1}
+    .photo-box{
+      width:100%;aspect-ratio:3/4;background:#e8e8e4;
+      display:flex;align-items:center;justify-content:center;
+      color:#aaa;font-size:0.8rem;text-align:center;line-height:2
+    }
+    .timeline{margin-top:3rem}
+    .tl-item{display:flex;gap:1.5rem;padding-bottom:2rem;position:relative}
+    .tl-item::before{content:'';position:absolute;left:14px;top:32px;bottom:0;width:1px;background:var(--line)}
+    .tl-item:last-child::before{display:none}
+    .tl-dot{width:28px;height:28px;border-radius:50%;background:var(--green);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center}
+    .tl-dot span{width:8px;height:8px;background:#fff;border-radius:50%;display:block}
+    .tl-year{font-size:0.75rem;letter-spacing:0.1em;color:var(--green);font-weight:500;text-transform:uppercase;margin-bottom:0.3rem}
+    .tl-title{font-weight:500;font-size:0.95rem;margin-bottom:0.3rem}
+    .tl-desc{font-size:0.85rem;color:var(--gray);line-height:1.7}
+
+    /* VALORI */
+    .valori{background:var(--bg)}
+    .valori-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);margin-top:3rem}
+    .valore-card{background:#fff;padding:2.5rem 2rem}
+    .valore-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:var(--line);line-height:1;margin-bottom:1rem}
+    .valore-card h3{font-size:0.95rem;font-weight:500;margin-bottom:0.5rem}
+    .valore-card p{font-size:0.85rem;color:var(--gray);line-height:1.7}
+
+    /* TEAM */
+    .team{background:var(--white)}
+    .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3rem}
+    .team-card{display:flex;gap:1.5rem;padding:2rem;border:1px solid var(--line)}
+    .team-avatar{width:64px;height:64px;border-radius:50%;background:var(--green);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:#fff}
+    .team-card h3{font-size:1rem;font-weight:500;margin-bottom:0.2rem}
+    .team-card .role{font-size:0.78rem;color:var(--green);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.5rem}
+    .team-card p{font-size:0.85rem;color:var(--gray);line-height:1.7}
+
+    /* CTA */
+    .cta-strip{background:var(--green);padding:4rem 6vw;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+    .cta-strip h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:#fff;font-weight:700}
+    .cta-strip p{color:rgba(255,255,255,0.75);font-size:0.9rem;margin-top:0.4rem}
+
+    footer{background:#0f0f0f;color:rgba(255,255,255,0.5);padding:4rem 6vw 2.5rem}
+    .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.07)}
+    .footer-logo{height:90px;width:auto;background:#fff;padding:8px;opacity:1;margin-bottom:1.25rem}
+    .footer-about p{font-size:0.85rem;line-height:1.8;max-width:280px}
+    .footer-slogan{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(255,255,255,0.25);font-size:0.95rem;margin-top:1rem}
+    .footer-col h5{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.25rem;font-weight:500}
+    .footer-col ul{list-style:none}
+    .footer-col ul li{margin-bottom:0.65rem}
+    .footer-col ul li a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
+    .footer-col ul li a:hover{color:var(--green-light)}
+    .footer-bottom{padding-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;font-size:0.78rem}
+
+    @media(max-width:900px){
+      .nav-links{display:none}.hamburger{display:flex}
+      .storia-grid{grid-template-columns:1fr;gap:3rem}
+      .storia-visual{grid-template-columns:1fr}
+      .storia-visual .content-photo,.storia-visual .timeline{grid-column:1;grid-row:auto}
+      .storia-visual .timeline{margin-top:1.5rem!important}
+      .valori-grid{grid-template-columns:1fr}
+      .team-grid{grid-template-columns:1fr}
+      .footer-top{grid-template-columns:1fr;gap:2rem}
+      .cta-strip{flex-direction:column;align-items:flex-start}
+    }
+    @media(max-width:580px){section{padding:4rem 5vw}}
+  </style>
+  <link rel="stylesheet" href="assets/css/cookie-consent.css"/><link rel="stylesheet" href="assets/site-enhancements.css"/>
+</head>
+<body>
+
+<nav>
+  <a class='nav-logo' href='index.html'><img src="assets/logo-sitom.webp" alt="Sitom Edilizia"/></a>
+  <ul class="nav-links">
+    <li><a href='index.html'>Home</a></li>
+    <li><a class='active' href='chi-siamo.html'>Chi Siamo</a></li>
+    <li><a href='servizi.html'>Servizi</a></li>
+    <li><a href='lavora.html'>Lavora con Noi</a></li>
+    <li><a class='cta' href='contatti.html'>Contatti</a></li>
+  </ul>
+  <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href='index.html'>Home</a><a href='chi-siamo.html'>Chi Siamo</a>
+  <a href='servizi.html'>Servizi</a><a href='lavora.html'>Lavora con Noi</a><a href='contatti.html'>Contatti</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="section-tag">Chi Siamo</p>
+    <h1 class="section-title">Artigiani veri,<br/>da oltre 10 anni.</h1>
+    <p>Sitom Edilizia Srl nasce dall'esperienza e dalla passione di Alessandro Sollecchia, geometra e muratore che ha fatto del lavoro ben fatto la sua firma.</p>
+  </div>
+</div>
+
+<section class="storia">
+  <div class="storia-grid">
+    <div class="storia-text">
+      <p class="section-tag">La Storia</p>
+      <h2 class="section-title">Una storia di<br/>passione e mestiere.</h2>
+      <p>Alessandro Sollecchia è geometra diplomato e ha lavorato come tecnico impiegato fino al 2012, anno in cui la ditta dove lavorava ha dichiarato fallimento. Una crisi che si è trasformata in un'opportunità: nel 2013 si è messo in proprio come artigiano specializzato nelle ristrutturazioni.</p>
+      <p>Da subito ha stretto una collaborazione fondamentale con un artigiano più esperto di lui — un vero mastro — che, oltre ad avergli insegnato il mestiere, è diventato un punto di riferimento costante. Ancora oggi continua ad affiancare e consigliare Alessandro.</p>
+      <blockquote>"In tutti questi anni la mia pubblicità è stata il passaparola. La qualità si vede, non si racconta."</blockquote>
+      <p>Dopo anni di crescita come artigiano, Alessandro ha fondato Sitom Edilizia Srl, portando sul mercato tutta l'esperienza accumulata sul campo — quella vera, quella che si impara sui cantieri.</p>
+    </div>
+    <div class="storia-visual">
+      <img class="photo-box content-photo" src="assets/lavoro-12.webp" alt="Lavorazione artigianale durante una ristrutturazione" loading="lazy" decoding="async"/>
+      <div class="timeline" style="margin-top:2.5rem">
+        <div class="tl-item">
+          <div class="tl-dot"><span></span></div>
+          <div>
+            <div class="tl-year">Fino al 2012</div>
+            <div class="tl-title">Geometra e Tecnico</div>
+            <div class="tl-desc">Lavoro come impiegato tecnico in impresa edile. Anni di formazione sul campo.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"><span></span></div>
+          <div>
+            <div class="tl-year">2013</div>
+            <div class="tl-title">Artigiano in Proprio</div>
+            <div class="tl-desc">Inizio dell'attività autonoma. Collaborazione con il mastro artigiano che diventa mentore.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"><span></span></div>
+          <div>
+            <div class="tl-year">Ultimi 2 anni</div>
+            <div class="tl-title">Costituzione della Srl</div>
+            <div class="tl-desc">L'attività avviata nel 2013 si struttura in Sitom Edilizia Srl. Stessa esperienza, stesso team, forma societaria più solida per servire meglio privati e aziende.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"><span></span></div>
+          <div>
+            <div class="tl-year">Oggi</div>
+            <div class="tl-title">Roma e oltre</div>
+            <div class="tl-desc">Operativi su Roma, provincia, Lazio e resto d'Italia. La qualità come unica pubblicità.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="valori">
+  <p class="section-tag">Valori</p>
+  <h2 class="section-title">Cosa ci guida ogni giorno.</h2>
+  <div class="valori-grid">
+    <div class="valore-card">
+      <div class="valore-num">01</div>
+      <h3>Cura dei dettagli</h3>
+      <p>Ogni lavoro, grande o piccolo, viene eseguito con la stessa attenzione ai particolari. Non esistono lavori di serie B.</p>
+    </div>
+    <div class="valore-card">
+      <div class="valore-num">02</div>
+      <h3>Serietà e trasparenza</h3>
+      <p>Preventivi chiari, tempi rispettati, comunicazione onesta. Il cliente deve sapere sempre cosa succede sul suo cantiere.</p>
+    </div>
+    <div class="valore-card">
+      <div class="valore-num">03</div>
+      <h3>Tradizione artigianale</h3>
+      <p>Lavoriamo con metodi collaudati e materiali di qualità. L'esperienza di decenni di mestiere trasmessa di artigiano in artigiano.</p>
+    </div>
+  </div>
+</section>
+
+<section class="team">
+  <p class="section-tag">Persone</p>
+  <h2 class="section-title">Chi lavora con te.</h2>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar">AS</div>
+      <div>
+        <h3>Alessandro Sollecchia</h3>
+        <div class="role">Titolare &amp; Fondatore</div>
+        <p>Geometra diplomato, muratore, imprenditore. Ha costruito Sitom Edilizia sulla passione per il lavoro ben fatto e sulla fiducia dei clienti.</p>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background:#333">M</div>
+      <div>
+        <h3>Il Mastro Artigiano</h3>
+        <div class="role">Consulente &amp; Collaboratore</div>
+        <p>Artigiano di grande esperienza e punto di riferimento per Alessandro. Custode delle tecniche e della sapienza di un mestiere antico.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <div>
+    <h2>Vuoi lavorare con noi?</h2>
+    <p>Sia come cliente che come collaboratore, siamo sempre aperti a nuove relazioni.</p>
+  </div>
+  <div style="display:flex;gap:1rem;flex-wrap:wrap">
+    <a class='btn' href='contatti.html' style='background:#fff;color:var(--green)'>Richiedi Preventivo</a>
+    <a class='btn' href='lavora.html' style='border:1px solid rgba(255,255,255,0.4);color:#fff'>Lavora con Noi</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-about">
+      <img src="assets/logo-sitom.webp" alt="Sitom Edilizia" class="footer-logo"/>
+      <p>Sitom Edilizia Srl – Piazzale delle Provincie, 8 – 00162 Roma<br/>P.I./C.F. 17213611001</p>
+      <p class="footer-slogan">"La tua casa, la nostra missione."</p>
+    </div>
+    <div class="footer-col"><h5>Pagine</h5><ul><li><a href='index.html'>Home</a></li><li><a href='chi-siamo.html'>Chi Siamo</a></li><li><a href='servizi.html'>Servizi</a></li><li><a href='lavora.html'>Lavora con Noi</a></li><li><a href='contatti.html'>Contatti</a></li></ul></div>
+    <div class="footer-col"><h5>Contatti</h5><ul><li><a href="tel:+393475930035">+39 347 593 0035</a></li><li><a href="mailto:sitomedilizia@gmail.com">sitomedilizia@gmail.com</a></li><li><a href="https://wa.me/393475930035" target="_blank">WhatsApp</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Sitom Edilizia Srl</span><span>Realizzato con amore da <a href="https://msha.ke/vgwebdesigner/" target="_blank" rel="noopener">vgwebdesigner</a></span><span><a href="privacy-cookie.html">Privacy &amp; Cookie Policy</a></span><span><button type="button" class="cc-footer-link" data-cookie-consent-open>Rivedi le tue scelte sui cookie</button></span></div>
+</footer>
+<script>
+  const ham=document.getElementById('ham'),mob=document.getElementById('mobileMenu');
+  ham.addEventListener('click',()=>mob.classList.toggle('open'));
+  document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>mob.classList.remove('open')));
+</script>
+<button class="wa-assistant-trigger" type="button" data-wa-assistant-open aria-label="Apri guida WhatsApp per il sopralluogo">
+  <span class="wa-assistant-icon" aria-hidden="true">S</span><span class="wa-assistant-label">Parla con Sitom</span>
+</button>
+<script src="assets/js/cookie-consent.js"></script>
+<!-- GA4: sostituire G-XXXXXXXXXX con il Measurement ID reale del cliente prima di attivare -->
+<script type="text/plain" data-cookie-category="analytics" data-src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script type="text/plain" data-cookie-category="analytics">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script><script src="assets/site-enhancements.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contatti – Sitom Edilizia Srl Roma</title>
+  <meta name="description" content="Contatta Sitom Edilizia Srl per un sopralluogo o un preventivo gratuito entro 24 ore per ristrutturazioni e lavori edili a Roma."/>
+    <meta name="robots" content="index,follow"/>
+  <link rel="canonical" href="https://www.sitomedilizia.it/contatti.html"/>
+  <meta name="theme-color" content="#1a7a38"/>
+  <meta property="og:locale" content="it_IT"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="Contatti – Sitom Edilizia Srl Roma"/>
+  <meta property="og:description" content="Contatta Sitom Edilizia Srl per un sopralluogo o un preventivo gratuito entro 24 ore per ristrutturazioni e lavori edili a Roma."/>
+  <meta property="og:url" content="https://www.sitomedilizia.it/contatti.html"/>
+  <meta property="og:site_name" content="Sitom Edilizia Srl"/>
+  <meta property="og:image" content="https://www.sitomedilizia.it/assets/lavoro-14.webp"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Contatti – Sitom Edilizia Srl Roma"/>
+  <meta name="twitter:description" content="Contatta Sitom Edilizia Srl per un sopralluogo o un preventivo gratuito entro 24 ore per ristrutturazioni e lavori edili a Roma."/>
+  <meta name="twitter:image" content="https://www.sitomedilizia.it/assets/lavoro-14.webp"/>
+  <link rel="icon" type="image/png" href="assets/favicon.png"/>
+  <link rel="apple-touch-icon" href="assets/icon-192.png"/>
+  <link rel="manifest" href="site.webmanifest"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--green:#1a7a38;--green-light:#219a47;--green-dark:#125429;--black:#0f0f0f;--text:#2a2a2a;--gray:#6b6b6b;--line:#e4e4e0;--bg:#fafaf8;--white:#ffffff}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 6vw;height:72px}
+    .nav-logo{display:flex;align-items:center;text-decoration:none}
+    .nav-logo img{height:64px;width:auto;display:block}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
+    .nav-links a{text-decoration:none;color:var(--text);font-size:0.88rem;font-weight:400;letter-spacing:0.04em;transition:color 0.2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--green)}
+    .nav-links .cta{background:var(--green);color:#fff!important;padding:9px 22px;font-weight:500;font-size:0.85rem}
+    .nav-links .cta:hover{background:var(--green-dark)}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}
+    .hamburger span{display:block;width:24px;height:1.5px;background:var(--text)}
+    .mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:1.5rem 6vw;z-index:99;flex-direction:column;gap:1.25rem}
+    .mobile-menu a{text-decoration:none;color:var(--text);font-size:1rem}
+    .mobile-menu.open{display:flex}
+    .section-tag{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);font-weight:500;margin-bottom:1rem}
+    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:700;line-height:1.1;color:var(--black);margin-bottom:1.25rem}
+
+    .page-hero{margin-top:72px;padding:5rem 6vw 4rem;background:var(--bg);border-bottom:1px solid var(--line)}
+    .page-hero .section-title{margin-bottom:1rem}
+    .page-hero p{font-size:1.05rem;color:var(--gray);line-height:1.85;max-width:560px}
+
+    .contatti-main{padding:6rem 6vw;background:var(--white)}
+    .contatti-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:6rem;align-items:start}
+
+    /* INFO */
+    .info-block{margin-bottom:2.5rem}
+    .info-row{display:flex;align-items:flex-start;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--line)}
+    .info-row:first-child{border-top:1px solid var(--line)}
+    .info-icon{width:40px;height:40px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+    .info-label{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray);font-weight:500;margin-bottom:0.2rem}
+    .info-val{font-size:0.95rem;font-weight:400}
+    .info-val a{color:var(--text);text-decoration:none;transition:color 0.2s}
+    .info-val a:hover{color:var(--green)}
+
+    .wa-block{
+      background:var(--black);padding:2rem;display:flex;
+      align-items:center;gap:1.5rem;margin-top:2rem;
+      cursor:pointer;transition:background 0.2s;text-decoration:none;
+      display:block;
+    }
+    .wa-block:hover{background:#1a1a1a}
+    .wa-inner{display:flex;align-items:center;gap:1.5rem}
+    .wa-dot{width:48px;height:48px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+    .wa-block h3{color:#fff;font-size:1rem;font-weight:500;margin-bottom:0.2rem}
+    .wa-block p{color:rgba(255,255,255,0.45);font-size:0.82rem}
+
+    /* FORM */
+    .contact-form{background:var(--bg);padding:2.5rem;border:1px solid var(--line)}
+    .contact-form h3{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:700;margin-bottom:0.5rem}
+    .contact-form .form-note{font-size:0.82rem;color:var(--gray);margin-bottom:2rem}
+    .form-group{margin-bottom:1.25rem}
+    .form-group label{display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray);font-weight:500;margin-bottom:0.4rem}
+    .form-group input,.form-group textarea,.form-group select{
+      width:100%;padding:0.85rem 1rem;border:1px solid var(--line);background:#fff;
+      font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--text);
+      outline:none;transition:border-color 0.2s;resize:vertical;-webkit-appearance:none
+    }
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--green)}
+    .form-group textarea{min-height:110px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .btn-submit{width:100%;background:var(--green);color:#fff;border:none;padding:14px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:500;letter-spacing:0.06em;cursor:pointer;transition:background 0.2s}
+    .btn-submit:hover{background:var(--green-dark)}
+    .form-success{display:none;background:#eaf5ee;color:var(--green-dark);padding:1rem;text-align:center;font-weight:500;font-size:0.9rem;margin-top:0.75rem}
+
+    footer{background:#0f0f0f;color:rgba(255,255,255,0.5);padding:4rem 6vw 2.5rem}
+    .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.07)}
+    .footer-logo{height:90px;width:auto;background:#fff;padding:8px;opacity:1;margin-bottom:1.25rem}
+    .footer-about p{font-size:0.85rem;line-height:1.8;max-width:280px}
+    .footer-slogan{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(255,255,255,0.25);font-size:0.95rem;margin-top:1rem}
+    .footer-col h5{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.25rem;font-weight:500}
+    .footer-col ul{list-style:none}
+    .footer-col ul li{margin-bottom:0.65rem}
+    .footer-col ul li a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
+    .footer-col ul li a:hover{color:var(--green-light)}
+    .footer-bottom{padding-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;font-size:0.78rem}
+
+    @media(max-width:900px){
+      .nav-links{display:none}.hamburger{display:flex}
+      .contatti-grid{grid-template-columns:1fr;gap:3rem}
+      .form-row{grid-template-columns:1fr}
+      .footer-top{grid-template-columns:1fr;gap:2rem}
+    }
+    @media(max-width:580px){.contatti-main{padding:4rem 5vw}}
+  </style>
+  <link rel="stylesheet" href="assets/css/cookie-consent.css"/><link rel="stylesheet" href="assets/site-enhancements.css"/>
+</head>
+<body>
+
+<nav>
+  <a class='nav-logo' href='index.html'><img src="assets/logo-sitom.webp" alt="Sitom Edilizia"/></a>
+  <ul class="nav-links">
+    <li><a href='index.html'>Home</a></li>
+    <li><a href='chi-siamo.html'>Chi Siamo</a></li>
+    <li><a href='servizi.html'>Servizi</a></li>
+    <li><a href='lavora.html'>Lavora con Noi</a></li>
+    <li><a class='cta active' href='contatti.html'>Contatti</a></li>
+  </ul>
+  <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href='index.html'>Home</a><a href='chi-siamo.html'>Chi Siamo</a>
+  <a href='servizi.html'>Servizi</a><a href='lavora.html'>Lavora con Noi</a><a href='contatti.html'>Contatti</a>
+</div>
+
+<div class="page-hero">
+  <p class="section-tag">Contatti</p>
+  <h1 class="section-title">Parliamo del<br/>tuo progetto.</h1>
+  <p>Raccontaci cosa vuoi realizzare. Ti risponderemo con un preventivo gratuito e senza impegno.</p>
+</div>
+
+<div class="contatti-main">
+  <div class="contatti-grid">
+    <div>
+      <p class="section-tag">Dove Siamo</p>
+      <h2 class="section-title" style="font-size:2rem;margin-bottom:1.5rem">Sitom Edilizia Srl</h2>
+      <div class="info-block">
+        <div class="info-row">
+          <div class="info-icon">📍</div>
+          <div>
+            <div class="info-label">Sede Legale</div>
+            <div class="info-val">Piazzale delle Provincie, 8<br/>00162 Roma (RM)</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">📞</div>
+          <div>
+            <div class="info-label">Telefono</div>
+            <div class="info-val"><a href="tel:+393475930035">+39 347 593 0035</a></div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">✉️</div>
+          <div>
+            <div class="info-label">Email</div>
+            <div class="info-val"><a href="mailto:sitomedilizia@gmail.com">sitomedilizia@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">🏢</div>
+          <div>
+            <div class="info-label">Partita IVA / C.F.</div>
+            <div class="info-val">17213611001</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">👤</div>
+          <div>
+            <div class="info-label">Titolare</div>
+            <div class="info-val">Alessandro Sollecchia</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://wa.me/393475930035?text=Ciao!%20Vorrei%20un%20preventivo%20per%20lavori%20di%20ristrutturazione." target="_blank" class="wa-block">
+        <div class="wa-inner">
+          <div class="wa-dot">💬</div>
+          <div>
+            <h3>Scrivici su WhatsApp</h3>
+            <p>Risposta rapida · Preventivo gratuito · +39 347 593 0035</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <form class="contact-form" id="contactForm">
+      <h3>Richiedi un Preventivo</h3>
+      <p class="form-note">Compila il modulo e ti ricontatteremo entro 24 ore. Sopralluogo e preventivo sono sempre gratuiti.</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nome *</label>
+          <input type="text" id="c-nome" name="nome" required autocomplete="given-name" placeholder="Mario"/>
+        </div>
+        <div class="form-group">
+          <label>Cognome *</label>
+          <input type="text" id="c-cognome" name="cognome" required autocomplete="family-name" placeholder="Rossi"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email *</label>
+        <input type="email" id="c-email" name="email" required autocomplete="email" placeholder="mario@email.it"/>
+      </div>
+      <div class="form-group">
+        <label>Telefono</label>
+        <input type="tel" id="c-tel" name="telefono" autocomplete="tel" placeholder="+39 340 000 0000"/>
+      </div>
+      <div class="form-group">
+        <label>Tipo di lavoro</label>
+        <select id="c-tipo">
+          <option value="">— Seleziona —</option>
+          <option>Ristrutturazione completa</option>
+          <option>Impianto idraulico</option>
+          <option>Impianto termico</option>
+          <option>Impianto elettrico</option>
+          <option>Cartongesso</option>
+          <option>Tinteggiatura</option>
+          <option>Pavimentazione</option>
+          <option>Muratura</option>
+          <option>Non so ancora / Più lavori</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Descrivi il progetto</label>
+        <textarea id="c-msg" placeholder="Raccontaci cosa hai in mente: tipo di immobile, zona, tempistiche, qualsiasi dettaglio utile…"></textarea>
+      </div>
+      <label class="privacy-check"><input type="checkbox" id="c-privacy" required/><span>Ho letto e accetto la <a href="privacy-cookie.html" target="_blank">Privacy Policy</a> e autorizzo il trattamento dei dati per essere ricontattato. *</span></label><button class="btn-submit" type="submit">Invia su WhatsApp</button>
+      <p class="form-help">Si aprirà WhatsApp con il messaggio già compilato. Dovrai solo premere “Invia”.</p></form>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-about">
+      <img src="assets/logo-sitom.webp" alt="Sitom Edilizia" class="footer-logo"/>
+      <p>Sitom Edilizia Srl – Piazzale delle Provincie, 8 – 00162 Roma<br/>P.I./C.F. 17213611001</p>
+      <p class="footer-slogan">"La tua casa, la nostra missione."</p>
+    </div>
+    <div class="footer-col"><h5>Pagine</h5><ul><li><a href='index.html'>Home</a></li><li><a href='chi-siamo.html'>Chi Siamo</a></li><li><a href='servizi.html'>Servizi</a></li><li><a href='lavora.html'>Lavora con Noi</a></li><li><a href='contatti.html'>Contatti</a></li></ul></div>
+    <div class="footer-col"><h5>Contatti</h5><ul><li><a href="tel:+393475930035">+39 347 593 0035</a></li><li><a href="mailto:sitomedilizia@gmail.com">sitomedilizia@gmail.com</a></li><li><a href="https://wa.me/393475930035" target="_blank">WhatsApp</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Sitom Edilizia Srl</span><span>Realizzato con amore da <a href="https://msha.ke/vgwebdesigner/" target="_blank" rel="noopener">vgwebdesigner</a></span><span><a href="privacy-cookie.html">Privacy &amp; Cookie Policy</a></span><span><button type="button" class="cc-footer-link" data-cookie-consent-open>Rivedi le tue scelte sui cookie</button></span></div>
+</footer>
+<script>
+  const ham=document.getElementById('ham'),mob=document.getElementById('mobileMenu');
+  ham.addEventListener('click',()=>mob.classList.toggle('open'));
+  document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>mob.classList.remove('open')));
+
+</script>
+<button class="wa-assistant-trigger" type="button" data-wa-assistant-open aria-label="Apri guida WhatsApp per il sopralluogo">
+  <span class="wa-assistant-icon" aria-hidden="true">S</span><span class="wa-assistant-label">Parla con Sitom</span>
+</button>
+<script src="assets/js/cookie-consent.js"></script>
+<!-- GA4: sostituire G-XXXXXXXXXX con il Measurement ID reale del cliente prima di attivare -->
+<script type="text/plain" data-cookie-category="analytics" data-src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script type="text/plain" data-cookie-category="analytics">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script><script src="assets/site-enhancements.js" defer></script>
+</body>
+</html>
