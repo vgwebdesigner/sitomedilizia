@@ -1,7 +1,8 @@
 .cc-scroll-lock{overflow:auto!important}
 .cc-overlay{position:fixed;inset:auto auto 16px 16px;z-index:2147483000;display:block;width:min(520px,calc(100vw - 32px));font-family:inherit;opacity:0;pointer-events:none;transition:opacity .18s ease}
 .cc-overlay.cc-visible{opacity:1}
-.cc-dialog{position:relative;width:100%;max-height:calc(100dvh - 32px);overflow:auto;padding:18px;border:1px solid rgba(20,45,30,.12);border-radius:16px;background:#fff;color:#1d241f;box-shadow:0 18px 50px rgba(0,0,0,.18);pointer-events:auto}
+.cc-dialog{position:relative;width:100%;max-height:calc(100dvh - 32px);overflow:auto;padding:18px;border:1px solid rgba(20,45,30,.12);border-radius:16px;background:#fff;color:#1d241f;box-shadow:0 18px 50px rgba(0,0,0,.18);pointer-events:none}
+.cc-overlay.cc-visible .cc-dialog{pointer-events:auto}
 .cc-close{position:absolute;top:10px;right:10px;width:34px;height:34px;border:0;border-radius:50%;background:#f0f3f1;color:#1d241f;font:500 20px/1 inherit;cursor:pointer}
 .cc-eyebrow{margin:0 42px 6px 0;color:#2f7d4e;font-size:.64rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
 .cc-title{margin:0 42px 8px 0;font-size:1.12rem;line-height:1.18}
