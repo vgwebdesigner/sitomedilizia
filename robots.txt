@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.sitomedilizia.it/sitemap.xml
+Sitemap: https://sitomedilizia.it/sitemap.xml
